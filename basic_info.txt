@@ -1,0 +1,44 @@
+Minimal Functionalities:
+* ADMIN can:
+	-add a user
+	-delete a user
+	-search a user
+	-view/change user details
+	-submit a item for auction
+
+* USER(DEFAULT) can:
+	-register for a account
+	-bid on a auction item with money up front
+	-update a existing bid
+	-view bidding history
+	-edit account details
+
+* BIDS should be able to be:
+	-bid on by different users
+	-have a countdown for when bidding is open
+	-able to be browsed (sorting & filtering)
+
+Stretch Goals:
+	-Package tracking of completed bids
+	-Package tracking can fail depending on danger of object
+	-Encrypted e-mail notifications
+	-False auction page to hide black market
+	-Users(DEFAULT) can submit a item for auction
+	-Reactive design (i.e. friendly to a variety of views)
+	-Retract on-going packages sent to deleted users
+
+USE CASE #1:
+1. A new USER wants to register
+2. ADMIN adds new USER
+3. ADMIN submits a item for auction
+4. USER places a bid
+5. USER decides to view bids
+6. USER decides to update existing bid
+7. USER view bidding history
+8. USER edits account details
+9. ADMIN searches and views USER details
+10. ADMIN decides to delete illegal user
+11. Data Persistence
+
+
+	
