@@ -13,6 +13,9 @@ ePort is a black market auction application for anomalous and potentially danger
 Users of the application can bid for items available through the auction application, and after a defined
 period of time, the item in question is given to the highest bidder.
 
+## User Story
+https://github.com/220516-Java-Angular-Enterprise/P2-ePort-Frontend/blob/marks-branch/ePort_useDiagram.png
+
 ## Functional Features
 ### An ADMIN can:
 
