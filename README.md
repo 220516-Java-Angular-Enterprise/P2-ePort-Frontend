@@ -9,14 +9,14 @@ An application for a fictional black market auction
 * Mark Quercioli
 
 ## Project Description
-ePort is a black market auction application for anomalous and potentially dangerous products. 
+ePort is a black market auction application for anomalous and potentially dangerous products (known as SCPs, or Secure Containment Protocol). 
 Users of the application can bid for items available through the auction application, and after a defined
 period of time, the item in question is given to the highest bidder.
 
 ## User Story
 ### ADMIN User Story: Adding a new product
 1. ADMIN logs in to ePort clicks on the add new product button
-2. ADMIN types in the scp number of the creature they want and will get back the creature if found or 404 message if not found
+2. ADMIN types in the SCP number of the creature they want and will get back the creature if found or 404 message if not found
 3. If found, the SCP creature will be stored in the database with most/all of its parameters
 
 ## Use Case Diagrams
