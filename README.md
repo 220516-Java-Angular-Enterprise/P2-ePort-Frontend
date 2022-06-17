@@ -22,6 +22,22 @@ period of time, the item in question is given to the highest bidder.
 ## Use Case Diagrams
 <img src=https://github.com/220516-Java-Angular-Enterprise/P2-ePort-Frontend/blob/marks-branch/ePort_useDiagram.png>
 
+## APIs and Technologies
+* SCPier API
+* Java 8
+* Spring Boot
+  * PostgreSQL
+  * Apache Maven
+  * Apache Tomcat
+  * JPA Object Relational Mapping
+* Junit 5/Mockito
+* Postman
+* Angular
+* AWS
+  * EC2
+  * RDS
+  * Elastic Beanstalk
+
 ## Functional Features
 ### An ADMIN can:
 
