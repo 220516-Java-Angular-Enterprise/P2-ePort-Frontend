@@ -27,7 +27,8 @@ period of time, the item in question is given to the highest bidder.
 
 * activate a user account
 * delete a user account
-* view users, search for a specific user, and view a user's details
+* view users (sortable and filterable)
+* search for a specific user, and view that user's details
 * submit a new item to be auctioned
 * view auction items (sortable and filterable)
 
