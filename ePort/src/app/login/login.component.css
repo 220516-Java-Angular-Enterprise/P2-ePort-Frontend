@@ -1,12 +1,52 @@
 h1 {
     color: white;
+    font-family: 'Blippo'; 
+    text-align: center;
+    font-size: 48px;
 }
 
 img {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 0px;
+    padding-bottom: 20px;
 }
 
 .login {
     text-align: center;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.07);
+    box-sizing: border-box;
+
+}
+::placeholder{
+    color:antiquewhite;
+    font-family: 'Blippo'; 
+}
+form{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.10);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+
+button {
+    text-align: center;
+    background-color: #ffffff;
+    color: #080710;
+    cursor: pointer;
+    font-family: 'Blippo'; 
+
 }
