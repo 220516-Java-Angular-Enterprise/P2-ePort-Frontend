@@ -5,16 +5,26 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRouterModule } from './app-router/app-router.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './account/signup/signup.component';
+import { FormsModule } from '@angular/forms';
+import { LayoutComponent } from './account/layout/layout.component';
+import { DefaultUserComponent } from './home/default-user/default-user.component';
+import { AdminComponent } from './home/admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    LayoutComponent,
+    DefaultUserComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRouterModule,
-    HttpClientModule
+    HttpClientModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
