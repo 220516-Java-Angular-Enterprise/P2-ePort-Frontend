@@ -9,6 +9,8 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { DefaultUserComponent } from './home/default-user/default-user.component';
 import { AdminComponent } from './home/admin/admin.component';
+import { AdminViewUsersComponent } from './admin-view-users/admin-view-users.component';
+import { AdminViewAuctionsComponent } from './admin-view-auctions/admin-view-auctions.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AdminComponent } from './home/admin/admin.component';
     LoginComponent,
     SignupComponent,
     DefaultUserComponent,
-    AdminComponent
+    AdminComponent,
+    AdminViewUsersComponent,
+    AdminViewAuctionsComponent
   ],
   imports: [
     BrowserModule,
