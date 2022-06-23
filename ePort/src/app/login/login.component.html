@@ -1,15 +1,34 @@
 <html>
 <body>
-  <form>
+  <div class="container">
+  <form (ngSubmit)="processForm(loginForm)" #loginForm="ngForm">
     <div class="login">
       <h1>ePort</h1>
       <img src="https://cdn.discordapp.com/attachments/975764660311711806/988898713575493662/mcd.png" alt="Marshall, Carter & Dark Logo">
     </div>
-      <input type="text" name="u" placeholder="Username" required="required" />
-      <input type="password" name="p" placeholder="Password" required="required" />
-      <button type="submit" routerLink="../default-user" class="btn btn-primary btn-block btn-large">Login</button>
-      <a type="submit" routerLink="../signup" class="btn btn-link">Signup</a>  
+      <input type="text" name="u" id="login-username" class="form-control" [(ngModel)]="user.username" #name="ngModel" placeholder="Username" required/>
+      
+      <input type="password" name="p" id="login-password" class="form-control" [(ngModel)]="user.password" #name="ngModel" placeholder="Password" required/>
+
+      
+
+
+
+
+    
+        <div *ngIf="displayFormSubmitError" style="color: red">
+          
+            <br>
+            There's something wrong with your form
+            <input type="submit" class="btn btn-primary btn-block btn-large" value="Create">
+
+
+        </div>
+        <a type="submit" routerLink="../signup" class="btn btn-link">Signup</a>  
+
+
   </form>
+</div>
 </body>
 </html>
 

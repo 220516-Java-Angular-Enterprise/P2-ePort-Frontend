@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ePort';
+  data: any = {};
 
   onSubmit() {
     alert('SUCCESS!');

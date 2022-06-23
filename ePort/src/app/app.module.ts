@@ -9,6 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { DefaultUserComponent } from './home/default-user/default-user.component';
 import { AdminComponent } from './home/admin/admin.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AdminComponent } from './home/admin/admin.component';
     LoginComponent,
     SignupComponent,
     DefaultUserComponent,
-    AdminComponent
+    AdminComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

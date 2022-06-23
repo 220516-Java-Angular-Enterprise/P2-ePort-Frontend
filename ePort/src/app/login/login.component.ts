@@ -10,7 +10,6 @@ import { User } from '../models/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  // form!: FormGroup;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -34,7 +33,11 @@ export class LoginComponent implements OnInit {
     password: "",
   };
 
+  users: User[] = [];
   ngOnInit(): void {
+    this.userService.getAllUsers().then(u=> {
+      this.users = u;
+    })
   }
 
   processForm(loginForm: NgForm) {
