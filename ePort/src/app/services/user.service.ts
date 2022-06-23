@@ -25,4 +25,8 @@ export class UserService {
     return firstValueFrom(this.http.post(this.userURL, user));
   }
 
+  logIn(user: User){
+    return firstValueFrom(this.http.post(this.userURL, user));
+  }
+
 }
