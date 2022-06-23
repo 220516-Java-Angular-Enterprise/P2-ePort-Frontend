@@ -1,60 +1,50 @@
-<section>
-<div class="mask d-flex align-items-center h-80 gradient-custom-2">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Create your account</h2>
+<div class="container">
+  <h1>Register</h1>
+  <a routerLink="/login">Back to Log-In</a>
+</div>
 
-              <form>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1cg">Name</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Codename</label>
-                  </div>
-
-                <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example3cg">Email</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cg">Password</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example4cdg">Shipping Address</label>
-                  </div>
-
-                <div class="form-check d-flex justify-content-center mb-5">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                  <label class="form-check-label" for="form2Example3g">
-                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                  </label>
-                </div>
-
-                <div class="d-flex justify-content-center">
-                  <button type="button"
-                    class="btn btn-success btn-block btn-lg btn-dark">Signup</button>
-                </div>
-                
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="container">
+  <form (ngSubmit)="processForm(signupForm)" #signupForm="ngForm">
+    <div class="form-block">
+      <label for="signup-username">Username: </label>
+      <input class="form-control" [(ngModel)]="user.username" type="text" id="signup-username" name="signup-username" [placeholder]="placeholders.username" #name="ngModel" required>
     </div>
+
+    <div class="form-block">
+      <label for="signup-password">Password: </label>
+      <input class="form-control" [(ngModel)]="user.password" type="text" id="signup-password" name="signup-password" [placeholder]="placeholders.password" #name="ngModel" required>
+    </div>
+
+    <div class="form-block">
+      <label for="signup-codename">Alias: </label>
+      <input class="form-control" [(ngModel)]="user.codename" type="text" id="signup-codename" name="signup-codename" [placeholder]="placeholders.codename" #name="ngModel" required>
+    </div>
+
+    <div class="form-block">
+      <label for="signup-paymentID">Payment ID: </label>
+      <input class="form-control" [(ngModel)]="user.paymentID" type="text" id="signup-paymentID" name="signup-paymentID" [placeholder]="placeholders.paymentID" #name="ngModel" required>
+    </div>
+
+    <div class="form-block">
+      <label for="signup-shippingAddress">Shipping Address: </label>
+      <input class="form-control" [(ngModel)]="user.shippingAddress" type="text" id="signup-shippingAddress" name="signup-shippingAddress" [placeholder]="placeholders.shippingAddress" #name="ngModel" required>
+    </div>
+
+    <div class="form-block">
+      <label for="signup-email">Email: </label>
+      <input class="form-control" [(ngModel)]="user.email" type="text" id="signup-email" name="signup-email" [placeholder]="placeholders.email" #name="ngModel" required>
+    </div>
+
+    <div class="form-group">
+      <div *ngIf="displayFormSubmitError" style="color: red">
+          <br>
+          There's something wrong with your form
+      </div>
+
+      <br>
+
+      <input type="submit" value="Create" class="btn btn-success">
   </div>
-</section>
+
+  </form>
+</div>

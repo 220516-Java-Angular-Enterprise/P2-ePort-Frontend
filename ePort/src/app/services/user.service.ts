@@ -11,13 +11,18 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  private userURL = "eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/users";
+  private userURL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/users";
+
   getAllUsers(): Promise<User[]> {
     return firstValueFrom(this.http.get<User[]>(this.userURL));
   }
 
   getUserById(id: string): Promise<User> {
     return firstValueFrom(this.http.get<User>(this.userURL + "/" + identity));
+  }
+
+  signUp(user: User){
+    return firstValueFrom(this.http.post(this.userURL, user));
   }
 
 }
