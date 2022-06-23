@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
-import { LayoutComponent } from './account/layout/layout.component';
 import { DefaultUserComponent } from './home/default-user/default-user.component';
 import { AdminComponent } from './home/admin/admin.component';
 
@@ -16,7 +15,6 @@ import { AdminComponent } from './home/admin/admin.component';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    LayoutComponent,
     DefaultUserComponent,
     AdminComponent
   ],
