@@ -1,11 +1,13 @@
-export class User {
 
-    constructor(
-        public id: string,
-        public name: string,
-        public codename: string,
-        public password: string,
-        public shippingAddress: string,
-        public email: string
-    ) { }
+export interface User {
+    id: string;
+    username: string;
+    password: string;
+    role: string;
+    email: string;
+    codename: string;
+    shippingAddress: string;
+    funds: number;
+    paymentID: string;
+    isActive: boolean;
 }
