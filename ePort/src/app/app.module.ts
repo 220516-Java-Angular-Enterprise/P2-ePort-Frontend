@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRouterModule } from './app-router/app-router.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { DefaultUserComponent } from './home/default-user/default-user.component
 import { AdminComponent } from './home/admin/admin.component';
 import { AdminViewUsersComponent } from './admin-view-users/admin-view-users.component';
 import { AdminViewAuctionsComponent } from './admin-view-auctions/admin-view-auctions.component';
+
 
 @NgModule({
   declarations: [
