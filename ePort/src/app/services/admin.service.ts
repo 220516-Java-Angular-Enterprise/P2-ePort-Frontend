@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { AuctionShowing } from '../models/auction-showing';
 import { User } from '../models/user';
 
 @Injectable({
@@ -28,6 +29,14 @@ export class AdminService {
   }
 
   deleteUser(deleteRequest: User){
-    return firstValueFrom(this.http.put(this.URL + "/delete", deleteRequest))
+    return firstValueFrom(this.http.delete(this.URL + "/delete", {body: deleteRequest}))
+  }
+
+  getAllAuctionShowings(): Promise<AuctionShowing[]>{
+    return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "/active"))
+  }
+
+  createNewAuction(auctionShowing: AuctionShowing){
+    return firstValueFrom(this.http.post(this.URL + "/newAuction", auctionShowing));
   }
 }
