@@ -11,6 +11,8 @@ import { DefaultUserComponent } from './home/default-user/default-user.component
 import { AdminComponent } from './home/admin/admin.component';
 import { AdminViewUsersComponent } from './admin-view-users/admin-view-users.component';
 import { AdminViewAuctionsComponent } from './admin-view-auctions/admin-view-auctions.component';
+import { AuthService } from './services/auth.service';
+import { TokenInterceptorService} from './services/token-interceptor.service';
 
 
 @NgModule({
@@ -29,7 +31,14 @@ import { AdminViewAuctionsComponent } from './admin-view-auctions/admin-view-auc
     HttpClientModule, 
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

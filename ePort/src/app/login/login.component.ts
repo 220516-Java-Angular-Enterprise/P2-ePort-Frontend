@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
   };
 
   auth: Auth = {
-    username: "auctionUser001",
-    password: "P@ssw0rd"
+    username: "",
+    password: ""
   }
 
   placeholders = {
@@ -42,13 +42,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // const token = JSON.parse(localStorage.getItem('Authorization'));
 
   processForm(loginForm: NgForm) {
     if(loginForm.form.status == 'VALID'){
-      this.authService.login(this.auth).subscribe(res => console.log(res)), (error: any) => console.log(error);
     }
     else{
       this.displayFormSubmitError = true;
     }
+  }
+  
+  loginUser() {
+    console.log(this.auth);
+    this.authService.login(this.auth).subscribe(res => {
+      console.log(res.token)
+      localStorage.setItem('Authorization',res.token) 
+      this.router.navigate(['default-user'])
+    }),
+     (error: any) => console.log(error);
   }
 }

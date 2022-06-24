@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { TokenServiceService } from './token.service';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 describe('TokenServiceService', () => {
-  let service: TokenServiceService;
+  let service: TokenInterceptorService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TokenServiceService);
+    service = TestBed.inject(TokenInterceptorService);
   });
 
   it('should be created', () => {

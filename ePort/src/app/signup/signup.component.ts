@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Route} from '@angular/router'
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
 import { User } from '../models/user';
 import { ThisReceiver } from '@angular/compiler';
 
@@ -14,7 +14,7 @@ import { ThisReceiver } from '@angular/compiler';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   displayFormSubmitError: boolean = false;
 
@@ -45,7 +45,7 @@ export class SignupComponent implements OnInit {
 
   processForm(signupForm: NgForm){
     if(signupForm.form.status == 'VALID'){
-      this.userService.signUp(this.user);
+      this.authService.signUp(this.user);
       this.router.navigateByUrl('/login');
     }
     else{
