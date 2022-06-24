@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminViewAuctionsComponent } from '../admin-view-auctions/admin-view-auctions.component';
-import { AdminViewUsersComponent } from '../admin-view-users/admin-view-users.component';
-import { AdminComponent } from '../home/admin/admin.component';
-import { DefaultUserComponent } from '../home/default-user/default-user.component';
+import { AdminViewAuctionsComponent } from '../admin/admin-view-auctions/admin-view-auctions.component';
+import { AdminViewUsersComponent } from '../admin/admin-view-users/admin-view-users.component';
+import { AdminComponent } from '../admin/admin-home/admin.component';
+import { DefaultUserComponent } from '../default-user/user/default-user.component';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
 

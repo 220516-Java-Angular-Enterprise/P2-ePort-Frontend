@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>username: {{user.username}}</h1>
+    <br>
+    <h3>
+        email: {{user.email}}
+    </h3>
+    <h3>
+        codename: {{user.codename}}   
+    </h3>
+    <h3>
+        Shipping Address: {{user.shippingAddress}}
+    </h3>
+    <h3>
+        funds: {{user.funds}}
+    </h3>
+    <h3>
+        Payment ID: {{user.paymentID}}
+    </h3>
+    <h3>
+        Account Active Status: {{user.isActive}}
+    </h3>
+    <button type="button" onclick="changeUserAccountStatus()">Change Account Status</button>
+    <button type="button" onclick="deleteUserAccount()">Delete Account</button>
+</div>
