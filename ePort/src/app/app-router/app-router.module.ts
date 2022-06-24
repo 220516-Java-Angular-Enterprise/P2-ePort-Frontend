@@ -6,6 +6,8 @@ import { AdminComponent } from '../admin/admin-home/admin.component';
 import { DefaultUserComponent } from '../default-user/user/default-user.component';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
+import { AdminViewUserDetailsComponent } from '../admin/admin-view-user-details/admin-view-user-details.component';
+import { AddAuctionComponent } from '../admin/add-auction/add-auction.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path: 'admin/view-auctions',
     component: AdminViewAuctionsComponent
+  },
+  {
+    path: 'admin/view-auctions/newAuction',
+    component: AddAuctionComponent
+  },
+  {
+    path: 'admin/view-users/:username',
+    component: AdminViewUserDetailsComponent
   }
 ];
 

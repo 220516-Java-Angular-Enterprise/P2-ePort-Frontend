@@ -12,6 +12,7 @@ import { AdminComponent } from './admin/admin-home/admin.component';
 import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-users.component';
 import { AdminViewAuctionsComponent } from './admin/admin-view-auctions/admin-view-auctions.component';
 import { AdminViewUserDetailsComponent } from './admin/admin-view-user-details/admin-view-user-details.component';
+import { AddAuctionComponent } from './admin/add-auction/add-auction.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AdminViewUserDetailsComponent } from './admin/admin-view-user-details/a
     AdminComponent,
     AdminViewUsersComponent,
     AdminViewAuctionsComponent,
-    AdminViewUserDetailsComponent
+    AdminViewUserDetailsComponent,
+    AddAuctionComponent
   ],
   imports: [
     BrowserModule,

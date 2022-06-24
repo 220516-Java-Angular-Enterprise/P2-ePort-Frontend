@@ -7,7 +7,7 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let user of users" (click)="goToUserId(user.id)">
+            <tr *ngFor="let user of users" (click)="goToUsername(user.username)">
                 <td>{{user.username}}</td>
                 <td>{{user.codename}}</td>
                 <td>{{user.isActive}}</td>

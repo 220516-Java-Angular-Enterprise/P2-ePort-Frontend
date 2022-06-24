@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../models/user';
-import { AdminService } from '../services/admin.service';
+import { User } from '../../models/user';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-admin-view-users',
@@ -20,8 +20,8 @@ export class AdminViewUsersComponent implements OnInit {
     });
   }
 
-  goToUserId(id: string) {
-    this.router.navigateByUrl('admin/view-users/${id}')
+  goToUsername(username: string | undefined) {
+    this.router.navigateByUrl('admin/view-users/${username}')
   }
 
 }
