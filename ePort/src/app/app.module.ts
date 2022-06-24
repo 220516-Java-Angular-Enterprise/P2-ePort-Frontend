@@ -7,20 +7,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { DefaultUserComponent } from './home/default-user/default-user.component';
-import { AdminComponent } from './home/admin/admin.component';
-import { AdminViewUsersComponent } from './admin-view-users/admin-view-users.component';
-import { AdminViewAuctionsComponent } from './admin-view-auctions/admin-view-auctions.component';
 import { AuthService } from './services/auth.service';
 import { TokenInterceptorService} from './services/token-interceptor.service';
-=======
+import { AdminViewUserDetailsComponent } from './admin/admin-view-user-details/admin-view-user-details.component';
 import { DefaultUserComponent } from './default-user/user/default-user.component';
 import { AdminComponent } from './admin/admin-home/admin.component';
 import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-users.component';
 import { AdminViewAuctionsComponent } from './admin/admin-view-auctions/admin-view-auctions.component';
-import { AdminViewUserDetailsComponent } from './admin/admin-view-user-details/admin-view-user-details.component';
->>>>>>> 4951128b98ca5d911a75a9e1f6950f94d7064b0f
 
 
 @NgModule({

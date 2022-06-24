@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 import { AuthService } from '../services/auth.service';
-import { Auth } from '../models/auth';
 
 @Component({
   selector: 'login',
@@ -30,7 +29,7 @@ export class LoginComponent implements OnInit {
     isActive: false
   };
 
-  auth: Auth = {
+  auth: User = {
     username: "",
     password: ""
   }
@@ -51,12 +50,26 @@ export class LoginComponent implements OnInit {
       this.displayFormSubmitError = true;
     }
   }
-  
+  /**
+   * let main_headers = {}
+this.http.post(url,
+  {email: this.username, password: this.password},
+  {'headers' : new HttpHeaders ({'Content-Type' : 'application/json'}), 'responseType': 'text', observe:'response'})
+  .subscribe(response => {
+    const keys = response.headers.keys();
+    let headers = keys.map(key => {
+      `${key}: ${response.headers.get(key)}`
+        main_headers[key] = response.headers.get(key)
+       }
+      );
+  });
+   */
   loginUser() {
     console.log(this.auth);
     this.authService.login(this.auth).subscribe(res => {
-      console.log(res.token)
-      localStorage.setItem('Authorization',res.token) 
+      console.log(res.headers.get('Authorization:'));
+
+      
       this.router.navigate(['default-user'])
     }),
      (error: any) => console.log(error);
