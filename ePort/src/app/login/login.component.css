@@ -42,11 +42,12 @@ form{
     padding: 50px 35px;
 }
 
-button {
+input[type=submit]{
     text-align: center;
     background-color: #ffffff;
     color: #080710;
     cursor: pointer;
     font-family: 'Blippo'; 
+    border-radius: 3px;
 
 }

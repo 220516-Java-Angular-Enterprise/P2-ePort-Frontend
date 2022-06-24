@@ -3,6 +3,8 @@ import { Router, ActivatedRoute} from '@angular/router'
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
+import { AuthService } from '../services/auth.service';
+import { Auth } from '../models/auth';
 
 @Component({
   selector: 'login',
@@ -11,7 +13,7 @@ import { User } from '../models/user';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   displayFormSubmitError: boolean = false; 
 
@@ -28,22 +30,22 @@ export class LoginComponent implements OnInit {
     isActive: false
   };
 
+  auth: Auth = {
+    username: "auctionUser001",
+    password: "P@ssw0rd"
+  }
+
   placeholders = {
     username: "",
     password: "",
   };
 
-  users: User[] = [];
   ngOnInit(): void {
-    this.userService.getAllUsers().then(u=> {
-      this.users = u;
-    })
   }
 
   processForm(loginForm: NgForm) {
     if(loginForm.form.status == 'VALID'){
-      this.userService.logIn(this.user);
-      this.router.navigateByUrl('/default-user');
+      this.authService.login(this.auth).subscribe(res => console.log(res)), (error: any) => console.log(error);
     }
     else{
       this.displayFormSubmitError = true;
