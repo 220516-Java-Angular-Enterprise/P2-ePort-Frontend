@@ -1,0 +1,19 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <th>Username</th>
+            <th>Alias</th>
+            <th>Account Status</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let user of users" (click)="goToUserId(user.id)">
+                <td>{{user.username}}</td>
+                <td>{{user.codename}}</td>
+                <td>{{user.isActive}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button routerLink="/admin">Back to Main Menu</button>
+</div>
+
