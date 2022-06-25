@@ -3,7 +3,6 @@ import { Router, ActivatedRoute, Route} from '@angular/router'
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
-import { ThisReceiver } from '@angular/compiler';
 
 // need to implement account and alert service
 
