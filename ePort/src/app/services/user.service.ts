@@ -24,4 +24,8 @@ export class UserService {
   signUp(user: User){
     return firstValueFrom(this.http.post(this.userURL, user));
   }
+
+  updateUserInfo(user: User){
+    return firstValueFrom(this.http.put(this.userURL, user));
+  }
 }

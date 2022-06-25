@@ -1,1 +1,60 @@
-<p>add-auction works!</p>
+<div class="container">
+    <h1>Open New Auction</h1>
+    <a routerLink="/admin/view-auctions">Back to Auction List</a>
+  </div>
+  
+  <div class="container">
+    <form (ngSubmit)="processForm(newAuctionForm)" #newAuctionForm="ngForm">
+      <div class="form-block">
+        <label for="newAuction-title">Title: </label>
+        <input class="form-control" [(ngModel)]="newAuction.title" type="text" id="newAuction-title" name="newAuction-title" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="newAuction-buyOut">Buy Out: </label>
+        <input class="form-control" [(ngModel)]="newAuction.buyOut" type="text" id="newAuction-buyOut" name="newAuction-buyOut" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="newAuction-startingBid">Title: </label>
+        <input class="form-control" [(ngModel)]="newAuction.startingBid" type="text" id="newAuction-startingBid" name="newAuction-startingBid" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="newAuction-status">Title: </label>
+        <input class="form-control" [(ngModel)]="newAuction.status" type="text" id="newAuction-status" name="newAuction-status" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="newAuction-startingDate">Title: </label>
+        <input class="form-control" [(ngModel)]="newAuction.startingDate" type="text" id="newAuction-startingDate" name="newAuction-startingDate" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="newAuction-expiration">Title: </label>
+        <input class="form-control" [(ngModel)]="newAuction.expiration" type="text" id="newAuction-expiration" name="newAuction-expiration" #name="ngModel" required>
+      </div>
+
+      <div class="form-block">
+        <label for="newAuction-scp_id">Title: </label>
+        <input class="form-control" [(ngModel)]="newAuction.scp_id" type="text" id="newAuction-scp_id" name="newAuction-scp_id" #name="ngModel" required>
+      </div>
+
+      <div class="form-block">
+        <label for="newAuction-user_id">Title: </label>
+        <input class="form-control" [(ngModel)]="newAuction.user_id" type="text" id="newAuction-user_id" name="newAuction-user_id" #name="ngModel" required>
+      </div>
+  
+      <div class="form-group">
+        <div *ngIf="displayFormSubmitError" style="color: red">
+            <br>
+            There's something wrong with your form
+        </div>
+  
+        <br>
+  
+        <input type="submit" value="Create" class="btn btn-success">
+    </div>
+  
+    </form>
+  </div>

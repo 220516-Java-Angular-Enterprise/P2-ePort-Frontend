@@ -10,6 +10,7 @@ export class DefaultUserComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //need to grab user info on initialize
   }
 
 }
