@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { AuctionShowing } from '../models/auction-showing';
+import { NewAuction } from '../models/new-auction';
 import { User } from '../models/user';
 
 @Injectable({
@@ -36,7 +37,7 @@ export class AdminService {
     return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "/active"))
   }
 
-  createNewAuction(auctionShowing: AuctionShowing){
-    return firstValueFrom(this.http.post(this.URL + "/newAuction", auctionShowing));
+  createNewAuction(newAuction: NewAuction){
+    return firstValueFrom(this.http.post(this.URL + "/newAuction", newAuction));
   }
 }
