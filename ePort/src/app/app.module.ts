@@ -19,6 +19,8 @@ import { UserDetailsComponent } from './default-user/user-details/user-details.c
 import { BiddingHistoryComponent } from './default-user/bidding-history/bidding-history.component';
 import { AuctionsComponent } from './default-user/auctions/auctions.component';
 import { AuctionDetailsComponent } from './default-user/auction-details/auction-details.component';
+import { StatusForbiddenComponent } from './http-status-redirect/status-forbidden/status-forbidden.component';
+import { StatusNotFoundComponent } from './http-status-redirect/status-not-found/status-not-found.component';
 
 
 
@@ -36,7 +38,9 @@ import { AuctionDetailsComponent } from './default-user/auction-details/auction-
     UserDetailsComponent,
     BiddingHistoryComponent,
     AuctionsComponent,
-    AuctionDetailsComponent
+    AuctionDetailsComponent,
+    StatusForbiddenComponent,
+    StatusNotFoundComponent
   ],
   imports: [
     BrowserModule,

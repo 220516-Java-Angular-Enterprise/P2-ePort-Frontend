@@ -1,9 +1,9 @@
-<div class="container">
-  <h1>Register</h1>
-  <a routerLink="/login">Back to Log-In</a>
+<div>
+  <button type="button" routerLink="/login">Back to Log-In</button>
 </div>
 
 <div class="container">
+  <h1>Registration</h1>
   <form (ngSubmit)="processForm(signupForm)" #signupForm="ngForm">
     <div class="form-block">
       <label for="signup-username">Username: </label>
