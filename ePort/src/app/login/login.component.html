@@ -3,6 +3,7 @@
   <form (ngSubmit)="processForm(loginForm)" #loginForm="ngForm">
     
     <div class="login">
+      <h1>Log-In</h1>
       <img src="https://cdn.discordapp.com/attachments/975764660311711806/988898713575493662/mcd.png" alt="Marshall, Carter & Dark Logo">
     </div>
       <input class="form-control" [(ngModel)]="auth.username" type="text" id="login-username" name="login-username" [placeholder]="placeholders.username" #name="ngModel" required>
@@ -12,13 +13,12 @@
         <div *ngIf="displayFormSubmitError" style="color: red">
           <br>
           There's something wrong with your form
-      </div>
-
-      <br>
-      <!-- <button (click)="loginUser()" type="button" class="btn btn-primary">Login</button> -->
-      <input type="submit" value="Login" class="btn btn-dark"> 
-      </div>
-        <a routerLink="/signup">Signup</a>  
+        </div>
+        
+        <!-- <button (click)="loginUser()" type="button" class="btn btn-primary">Login</button> -->
+        <input type="submit" value="Login"> 
+        <button type="button" routerLink="/signup">Don't have an account? Sign-Up</button>
+      </div>   
   </form>
 </div>
 
