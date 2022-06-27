@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { User } from '../models/user';
 
 @Injectable({
@@ -13,33 +13,20 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  /**
-   * 
- loginTest(loginCred: LoginParams): Observable<any> {
-    const header1= {'Content-Type':'application/json',};
-    const body =  JSON.stringify(loginCred);
-    return this.http.post<any>(this.baseURL+'signin',body,{
-        headers: header1,
-        observe: 'response',
-        responseType: 'json'
-    });
-}
-   */
   login(auth: User): Observable<any> {
-    const header1= {'Content-Type':'application/json',};
-    return this.http.post<any>(this.loginUrl, auth,{
-      headers:header1,
-      observe: 'response',
-      responseType:'json'
-    });
+
+    return this.http.post<any>(this.loginUrl, auth,
+      {
+      // observe:'response', // want to observe the whole response
+      responseType: 'json'
+    })
   }
   signUp(user: User){
     return this.http.post<any>(this.signupUrl, user);
   }
 
   getAuthToken() {
-    // extract token from the response header 
-    console.log(localStorage.getItem('token'))
-    return localStorage.getItem('token')
+    const token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0ZDhkZjQ1ZS0xZGI4LTQ2MGUtOTlhZS1iYzMyODMxZDI2NDgiLCJpc3MiOiJ5b2xwIiwiaWF0IjoxNjU2MzA3NDQ3LCJleHAiOjE2NTYzMTEwNDcsInN1YiI6Im1hcmtzdGVzdDEiLCJyb2xlIjoiREVGQVVMVCJ9.heYCkU0rnCQ0cHOWcsAflqSyD3_HmX1e387DB_v-IIE"
+    return token // returning null
   } 
 }

@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 import { AuthService } from '../services/auth.service';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'login',
@@ -11,7 +13,9 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  headers: any;
 
+  // injecting authservice for login functionalities 
   constructor(private authService: AuthService, private router: Router) { }
 
   displayFormSubmitError: boolean = false; 
@@ -30,8 +34,8 @@ export class LoginComponent implements OnInit {
   };
 
   auth: User = {
-    username: "",
-    password: ""
+    username: "markstest1",
+    password: "P@ssw0rd"
   }
 
   placeholders = {
@@ -41,37 +45,25 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // const token = JSON.parse(localStorage.getItem('Authorization'));
 
   processForm(loginForm: NgForm) {
     if(loginForm.form.status == 'VALID'){
+      this.authService.login(this.auth).subscribe(
+        (res) => {
+        console.log(res),
+        localStorage.setItem('body',res.username)
+        localStorage.setItem('role',res.role)
+        localStorage.setItem('token0', res.headers)
+    });
+      if(localStorage.getItem('role') == "ADMIN") {
+        this.router.navigateByUrl('admin')
+      }
+      else {
+        this.router.navigateByUrl('default-user')
+      }
     }
     else{
       this.displayFormSubmitError = true;
     }
-  }
-  /**
-   * let main_headers = {}
-this.http.post(url,
-  {email: this.username, password: this.password},
-  {'headers' : new HttpHeaders ({'Content-Type' : 'application/json'}), 'responseType': 'text', observe:'response'})
-  .subscribe(response => {
-    const keys = response.headers.keys();
-    let headers = keys.map(key => {
-      `${key}: ${response.headers.get(key)}`
-        main_headers[key] = response.headers.get(key)
-       }
-      );
-  });
-   */
-  loginUser() {
-    console.log(this.auth);
-    this.authService.login(this.auth).subscribe(res => {
-      console.log(res.headers.get('Authorization:'));
-
-      
-      this.router.navigate(['default-user'])
-    }),
-     (error: any) => console.log(error);
   }
 }
