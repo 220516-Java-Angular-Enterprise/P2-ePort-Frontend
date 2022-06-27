@@ -3,6 +3,8 @@ h1 {
     font-family: 'Blippo'; 
     text-align: center;
     font-size: 48px;
+    margin-top: auto;
+    position:relative
 }
 
 img {
@@ -44,7 +46,6 @@ form{
 
 input[type=submit]{
     text-align: center;
-    background-color: #ffffff;
     color: #080710;
     cursor: pointer;
     font-family: 'Blippo'; 
