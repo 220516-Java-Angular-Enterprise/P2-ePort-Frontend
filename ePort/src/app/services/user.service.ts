@@ -20,9 +20,9 @@ export class UserService {
     return firstValueFrom(this.http.get<User>(this.userURL + "/" + identity));
   }
 
-  signUp(user: User){
-    return firstValueFrom(this.http.post(this.userURL, user));
-  }
+  // signUp(user: User){
+  //   return firstValueFrom(this.http.post(this.userURL, user));
+  // }
 
   updateUserInfo(user: User){
     return firstValueFrom(this.http.put(this.userURL, user));
