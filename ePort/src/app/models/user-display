@@ -1,5 +1,5 @@
 
-export interface User {
+export interface UserDisplay {
     id?: string;
     username?: string;
     password?: string;
@@ -9,5 +9,5 @@ export interface User {
     shippingAddress?: string;
     funds?: number;
     paymentID?: string;
-    isActive: boolean;
+    isActive?: string;
 }
