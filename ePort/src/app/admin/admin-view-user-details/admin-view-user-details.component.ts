@@ -29,12 +29,11 @@ export class AdminViewUserDetailsComponent implements OnInit {
 
   activateRequest: User = {
     id: "",
-    isActive: false
+    isActive: true
   }
 
   deleteRequest: User = {
-    id: "",
-    isActive: false
+    username: ""
   }
 
   ngOnInit(): void {
@@ -44,12 +43,12 @@ export class AdminViewUserDetailsComponent implements OnInit {
         this.user = u;
       })
     })
-    this.activateRequest.id = this.user.id;
-    this.activateRequest.isActive = !this.user.isActive;
     this.deleteRequest.id = this.user.id;
   }
 
   changeUserAccountStatus(){
+    this.activateRequest.id = this.user.id;
+    console.log(this.activateRequest);
     this.adminService.activateUser(this.activateRequest);
   }
 

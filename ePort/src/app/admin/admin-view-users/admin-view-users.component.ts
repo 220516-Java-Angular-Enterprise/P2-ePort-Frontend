@@ -21,7 +21,7 @@ export class AdminViewUsersComponent implements OnInit {
   }
 
   goToUsername(username: string | undefined) {
-    this.router.navigateByUrl('admin/view-users/${username}')
+    this.router.navigateByUrl('admin/view-users/' + username)
   }
 
 }

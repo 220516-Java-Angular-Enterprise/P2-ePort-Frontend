@@ -19,6 +19,6 @@
     <h3>
         Account Active Status: {{user.isActive}}
     </h3>
-    <button type="button" onclick="changeUserAccountStatus()">Change Account Status</button>
-    <button type="button" onclick="deleteUserAccount()">Delete Account</button>
+    <button type="button" (click)="changeUserAccountStatus()">Change Account Status</button>
+    <button type="button" (click)="deleteUserAccount()">Delete Account</button>
 </div>
