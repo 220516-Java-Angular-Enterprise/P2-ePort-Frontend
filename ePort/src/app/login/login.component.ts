@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
   };
 
   auth: User = {
-    username: "markstest1",
-    password: "P@ssw0rd"
+    username: "",
+    password: ""
   }
 
   placeholders = {
