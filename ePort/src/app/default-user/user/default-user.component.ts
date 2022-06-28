@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Auth } from 'src/app/models/auth';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-default-user',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./default-user.component.css']
 })
 export class DefaultUserComponent implements OnInit {
+  users = []
+  constructor(private authService: AuthService, private userService: UserService) { }
 
-  constructor() { }
+  ngOnInit() {
 
-  ngOnInit(): void {
   }
+
+
+
+
 
 }

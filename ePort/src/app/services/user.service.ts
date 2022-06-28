@@ -8,11 +8,11 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-
+private userUrl = "http://localhost:8080/ePort/users";
   constructor(private http: HttpClient) { }
 
-  // getAllUsers(): Promise<User[]> {
-  //   return firstValueFrom(this.http.get<User[]>(this.userURL));
+  // getAllUsers() {
+  //   return (this.http.get<any>(this.userUrl));
   // }
 
   // getUserById(id: string): Promise<User> {

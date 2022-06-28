@@ -15,6 +15,7 @@ import { AdminViewAuctionsComponent } from './admin/admin-view-auctions/admin-vi
 import { AdminViewUserDetailsComponent } from './admin/admin-view-user-details/admin-view-user-details.component';
 import { AddAuctionComponent } from './admin/add-auction/add-auction.component';
 import { TokenStorageService } from './services/token-storage.service';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { TokenStorageService } from './services/token-storage.service';
   ],
   providers: [
     AuthService,
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenStorageService,
