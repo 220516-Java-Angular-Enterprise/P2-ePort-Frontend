@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuctionShowing } from 'src/app/models/auction-showing';
+import { NewAuction } from 'src/app/models/new-auction';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -14,19 +15,27 @@ export class AddAuctionComponent implements OnInit {
 
   displayFormSubmitError: boolean = false;
 
-  auctionShowing: AuctionShowing = {
-    id: "",
+  newAuction: NewAuction = {
     title: "",
-    auctionStatus: true,
+    buyOut: 0,
     startingBid: 0,
-    buyoutBid: 1
-  };
-
-  placeholders = {
-
+    status: true,
+    startingDate: "",
+    expiration: "",
+    scp_id: "",
+    user_id: ""
   };
 
   ngOnInit(): void {
   }
 
+  processForm(newAuctionForm: NgForm){
+    if(newAuctionForm.form.status == 'VALID'){
+      this.adminService.createNewAuction(this.newAuction);
+      this.router.navigateByUrl('/admin/view-auctions')
+    }
+    else{
+      this.displayFormSubmitError = true;
+    }
+  }
 }

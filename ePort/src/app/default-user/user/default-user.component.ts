@@ -12,12 +12,6 @@ export class DefaultUserComponent implements OnInit {
   users = []
   constructor(private authService: AuthService, private userService: UserService) { }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
+    //need to grab user info on initialize
   }
-
-
-
-
-
-}

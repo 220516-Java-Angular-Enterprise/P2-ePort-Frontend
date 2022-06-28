@@ -8,14 +8,23 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-private userUrl = "http://localhost:8080/ePort/users";
   constructor(private http: HttpClient) { }
 
-  // getAllUsers() {
-  //   return (this.http.get<any>(this.userUrl));
-  // }
+  private userURL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort";
 
-  // getUserById(id: string): Promise<User> {
-  //   return firstValueFrom(this.http.get<User>(this.userURL + "/" + identity));
-  // }
+  getAllUsers(): Promise<User[]> {
+    return firstValueFrom(this.http.get<User[]>(this.userURL));
+  }
+
+  getUserById(id: string): Promise<User> {
+    return firstValueFrom(this.http.get<User>(this.userURL + "/" + identity));
+  }
+
+  signUp(user: User){
+    return firstValueFrom(this.http.post(this.userURL, user));
+  }
+
+  updateUserInfo(user: User){
+    return firstValueFrom(this.http.put(this.userURL, user));
+  }
 }

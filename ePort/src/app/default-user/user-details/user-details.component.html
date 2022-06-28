@@ -1,0 +1,67 @@
+<div class="container">
+    <h1>username: {{user.username}}</h1>
+    <br>
+    <h3>
+        email: {{user.email}}
+    </h3>
+    <h3>
+        codename: {{user.codename}}   
+    </h3>
+    <h3>
+        Shipping Address: {{user.shippingAddress}}
+    </h3>
+    <h3>
+        funds: {{user.funds}}
+    </h3>
+    <h3>
+        Payment ID: {{user.paymentID}}
+    </h3>
+</div>
+
+<div class="container">
+    <form (ngSubmit)="processForm(updateuserInfoForm)" #updateuserInfoForm="ngForm">
+      <div class="form-block">
+        <label for="update-username">Username: </label>
+        <input class="form-control" [(ngModel)]="user.username" type="text" id="update-username" name="update-username" [placeholder]="placeholders.username" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="update-password">Password: </label>
+        <input class="form-control" [(ngModel)]="user.password" type="text" id="update-password" name="update-password" [placeholder]="placeholders.password" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="update-codename">Alias: </label>
+        <input class="form-control" [(ngModel)]="user.codename" type="text" id="update-codename" name="update-codename" [placeholder]="placeholders.codename" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="update-paymentID">Payment ID: </label>
+        <input class="form-control" [(ngModel)]="user.paymentID" type="text" id="update-paymentID" name="update-paymentID" [placeholder]="placeholders.paymentID" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="update-shippingAddress">Shipping Address: </label>
+        <input class="form-control" [(ngModel)]="user.shippingAddress" type="text" id="update-shippingAddress" name="update-shippingAddress" [placeholder]="placeholders.shippingAddress" #name="ngModel" required>
+      </div>
+  
+      <div class="form-block">
+        <label for="update-email">Email: </label>
+        <input class="form-control" [(ngModel)]="user.email" type="text" id="update-email" name="update-email" [placeholder]="placeholders.email" #name="ngModel" required>
+      </div>
+  
+      <div class="form-group">
+        <div *ngIf="displayFormSubmitError" style="color: red">
+            <br>
+            There's something wrong with your form
+        </div>
+  
+        <br>
+  
+        <input type="submit" value="Create" class="btn btn-success">
+    </div>
+  
+    </form>
+  </div>
+
+  <button type="button" routerLink="/user">Back to Main Menu</button>
