@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { firstValueFrom, map, Observable } from 'rxjs';
 import { User } from '../models/user';
 
 @Injectable({
@@ -8,18 +8,21 @@ import { User } from '../models/user';
 })
 export class AuthService {
 
-  // private loginUrl = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/auth";
-  loginUrl="http://localhost:8080/ePort/auth"
-  private signupUrl = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/users";
+  private URL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/";
 
   constructor(private http: HttpClient) { }
 
   login(auth: User){
-    return this.http.post<any>(this.loginUrl, auth)
+    return this.http.post<any>(this.URL + "auth", auth)
   }
   signUp(user: User){
-    return this.http.post<any>(this.signupUrl, user)
+    return firstValueFrom(this.http.post<any>(this.URL + "users", user));
   }
+
+    // signUp(user: User){
+  //   return firstValueFrom(this.http.post(this.userURL, user));
+  // }
+
   getAuthToken() {
    return localStorage.getItem("token");
   } 
