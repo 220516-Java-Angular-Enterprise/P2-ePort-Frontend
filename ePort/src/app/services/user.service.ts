@@ -8,7 +8,6 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-
   constructor(private http: HttpClient) { }
 
   private userURL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort";
@@ -28,5 +27,4 @@ export class UserService {
   updateUserInfo(user: User){
     return firstValueFrom(this.http.put(this.userURL, user));
   }
-
 }

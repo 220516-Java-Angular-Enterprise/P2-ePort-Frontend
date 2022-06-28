@@ -1,6 +1,6 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -9,17 +9,20 @@ import { AuthService } from './auth.service';
 export class TokenStorageService implements HttpInterceptor {
 
   // injecting Injector instead of authservice to prevent cyclic dependency
-  constructor(private injector: Injector) { }
-
-  intercept(req: HttpRequest<any>, next: HttpHandler){
-    let authService = this.injector.get(AuthService) 
-    let token = authService.getAuthToken()
-    localStorage.setItem('token', token)
+  constructor(private authService: AuthService) {
+   }
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log(req)
     let tokenizedReq = req.clone({
       setHeaders: {
-        Authorization: `Bearer ${authService.getAuthToken()}`
+        "Access-Control-Allow-Origin": "origin-list",
+        Authorization: `${this.authService.getAuthToken()}`
       }
     })
+    if(this.authService.getAuthToken() == null) {
+      console.log('INTERCEPTOR')
+      return next.handle(tokenizedReq)
+    }
       return next.handle(tokenizedReq)
   }
 }

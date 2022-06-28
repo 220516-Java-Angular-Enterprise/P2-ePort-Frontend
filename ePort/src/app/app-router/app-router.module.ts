@@ -8,7 +8,7 @@ import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
 import { AdminViewUserDetailsComponent } from '../admin/admin-view-user-details/admin-view-user-details.component';
 import { AddAuctionComponent } from '../admin/add-auction/add-auction.component';
-
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
@@ -21,27 +21,33 @@ const routes: Routes = [
   }, 
   {
     path: 'default-user',
-    component: DefaultUserComponent
+    component: DefaultUserComponent,
+    canActivate: [AuthGuard]
   }, 
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin/view-users',
-    component: AdminViewUsersComponent
+    component: AdminViewUsersComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin/view-auctions',
-    component: AdminViewAuctionsComponent
+    component: AdminViewAuctionsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin/view-auctions/newAuction',
-    component: AddAuctionComponent
+    component: AddAuctionComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin/view-users/:username',
-    component: AdminViewUserDetailsComponent
+    component: AdminViewUserDetailsComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

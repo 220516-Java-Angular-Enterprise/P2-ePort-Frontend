@@ -50,20 +50,24 @@ export class LoginComponent implements OnInit {
     if(loginForm.form.status == 'VALID'){
       this.authService.login(this.auth).subscribe(
         (res) => {
-        console.log(res),
-        localStorage.setItem('body',res.username)
-        localStorage.setItem('role',res.role)
-        localStorage.setItem('token0', res.headers)
-    });
-      if(localStorage.getItem('role') == "ADMIN") {
-        this.router.navigateByUrl('admin')
-      }
-      else {
-        this.router.navigateByUrl('default-user')
-      }
+        if(res != null) {
+          // storing resp in console and token, userdata in local storage
+          console.log(res),
+          localStorage.setItem('token', res.id),
+          localStorage.setItem('userData', JSON.stringify(res)) 
+        
+          if(res.role == "ADMIN") {
+            this.router.navigateByUrl('admin')
+          }
+          else {
+            this.router.navigateByUrl('default-user')
+          }
+        }
+      });
     }
     else{
       this.displayFormSubmitError = true;
     }
   }
 }
+
