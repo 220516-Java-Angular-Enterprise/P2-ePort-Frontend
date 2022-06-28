@@ -8,7 +8,7 @@ import { User } from '../models/user';
 })
 export class AuthService {
 
-  private hostURL = "http://localhost:8080/ePort/auth"
+  private hostURL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/auth"
   private URL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/";
 
   constructor(private http: HttpClient) { }

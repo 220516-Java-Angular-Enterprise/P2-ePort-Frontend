@@ -35,8 +35,7 @@ export class AdminViewUsersComponent implements OnInit {
       codename: user.codename,
       shippingAddress: user.shippingAddress,
       funds: user.funds,
-      paymentID: user.paymentID,
-      isActive: user.isActive.toString()
+      paymentID: user.paymentID
 
     }
     return userDisplay;

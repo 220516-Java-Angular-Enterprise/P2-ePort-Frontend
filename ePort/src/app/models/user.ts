@@ -9,5 +9,5 @@ export interface User {
     shippingAddress?: string;
     funds?: number;
     paymentID?: string;
-    isActive: boolean;
+    isActive?: boolean;
 }
