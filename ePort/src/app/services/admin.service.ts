@@ -26,8 +26,8 @@ export class AdminService {
     return firstValueFrom(this.http.put(this.URL + "users/activate", activateRequest))
   }
 
-  deleteUser(deleteRequest: User){
-    return firstValueFrom(this.http.delete(this.URL + "users/delete/" + deleteRequest.username, {body: deleteRequest}))
+  deleteUser(deleteRequest: string){
+    return firstValueFrom(this.http.delete(this.URL + "users/delete/" + deleteRequest, {body: deleteRequest}))
   }
 
   getAllAuctionShowings(): Promise<AuctionShowing[]>{
