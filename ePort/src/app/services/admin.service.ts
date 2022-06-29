@@ -32,11 +32,11 @@ export class AdminService {
   }
 
   getAllAuctionShowings(): Promise<AuctionShowing[]>{
-    return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "active"))
+    return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "auction/active"))
   }
 
   createNewAuction(newAuction: NewAuction){
-    return firstValueFrom(this.http.post(this.URL + "newAuction", newAuction));
+    return firstValueFrom(this.http.post(this.URL + "auction/newAuction", newAuction));
   }
 
   createSCP(scp: SCP){
