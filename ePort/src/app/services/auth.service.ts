@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+  // private hostURL = "localhost:8080/ePort/auth"
   private hostURL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/auth"
   private URL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/";
 
