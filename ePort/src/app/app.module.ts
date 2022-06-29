@@ -22,6 +22,7 @@ import { AuctionsComponent } from './default-user/auctions/auctions.component';
 import { AuctionDetailsComponent } from './default-user/auction-details/auction-details.component';
 import { StatusForbiddenComponent } from './http-status-redirect/status-forbidden/status-forbidden.component';
 import { StatusNotFoundComponent } from './http-status-redirect/status-not-found/status-not-found.component';
+import { CreateScpComponent } from './admin/create-scp/create-scp.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { StatusNotFoundComponent } from './http-status-redirect/status-not-found
     AuctionsComponent,
     AuctionDetailsComponent,
     StatusForbiddenComponent,
-    StatusNotFoundComponent
+    StatusNotFoundComponent,
+    CreateScpComponent
   ],
   imports: [
     BrowserModule,

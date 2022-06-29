@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { AuctionShowing } from '../models/auction-showing';
 import { NewAuction } from '../models/new-auction';
+import { SCP } from '../models/SCP';
 import { User } from '../models/user';
 
 @Injectable({
@@ -31,10 +32,14 @@ export class AdminService {
   }
 
   getAllAuctionShowings(): Promise<AuctionShowing[]>{
-    return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "/active"))
+    return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "active"))
   }
 
   createNewAuction(newAuction: NewAuction){
-    return firstValueFrom(this.http.post(this.URL + "/newAuction", newAuction));
+    return firstValueFrom(this.http.post(this.URL + "newAuction", newAuction));
+  }
+
+  createSCP(scp: SCP){
+    return firstValueFrom(this.http.post(this.URL + "scp", scp));
   }
 }

@@ -1,0 +1,8 @@
+label {
+    color: white;
+    font-family: 'Blippo';
+}
+
+button:hover {
+    background-color: rgb(130, 130, 130);
+}
