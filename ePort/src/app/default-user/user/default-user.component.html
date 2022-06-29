@@ -1,3 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" style="cursor:pointer" (click)="authService.logoutUser()">ePort</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Other</a>
+    </ul>
+    <nav class="navbar Navbar__Items--right">
+      <a class="nav link" href="/login" style="cursor:pointer" *ngIf="authService.isLoggedIn()" (click)="authService.logoutUser()">Logout</a>
+
+    </nav>
+    <ul>        
+    </ul>
+  </div>
+</nav>
+   
 <div class="admin-menu">
     <h1>Customer Menu</h1>
     <div class="img-container">
@@ -14,7 +33,6 @@
             </div>
           
         </div>
-
         <div class="list-group list-group-flush">
             <div class="row">
             <div class="button-group btn-group-lg" role="group">
@@ -27,15 +45,7 @@
           
         </div>
 
-        <div class="list-group list-group-flush">
-            <div class="row">
-            <div class="button-group btn-group-md" role="group">
-                    <button type="button" class="btn btn-dark mr-1">Home</button>
-                    <button type="button" class="btn btn-dark mr-1">Signout</button>
-                </div>
-            </div>
-          
-        </div>
+
     </div>
 
     

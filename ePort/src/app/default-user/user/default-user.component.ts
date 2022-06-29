@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DefaultUserComponent implements OnInit {
   users = []
-  constructor(private authService: AuthService, private userService: UserService) { }
+  constructor(public authService: AuthService, private userService: UserService) { }
 
   ngOnInit(): void {
     //need to grab user info on initialize

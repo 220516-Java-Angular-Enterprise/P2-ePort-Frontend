@@ -18,10 +18,10 @@ export class AdminViewUsersComponent implements OnInit {
     this.adminService.getAllUsers().then(u => {
       this.users = u;
     });
+
   }
 
   goToUsername(username: string | undefined) {
     this.router.navigateByUrl('admin/view-users/' + username)
   }
-
 }

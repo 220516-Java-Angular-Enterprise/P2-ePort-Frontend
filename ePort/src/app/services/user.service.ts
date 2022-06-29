@@ -12,10 +12,6 @@ export class UserService {
 
   private userURL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort";
 
-  getAllUsers(): Promise<User[]> {
-    return firstValueFrom(this.http.get<User[]>(this.userURL));
-  }
-
   getUserById(id: string): Promise<User> {
     return firstValueFrom(this.http.get<User>(this.userURL + "/" + identity));
   }
