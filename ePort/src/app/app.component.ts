@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ export class AppComponent {
   title = 'ePort';
   data: any = {};
 
+  constructor(public authService:AuthService){
+
+  }
   onSubmit() {
     alert('SUCCESS!');
   }
