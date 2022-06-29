@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'ePort';
   data: any = {};
 
+  constructor(protected authService:AuthService){}
   onSubmit() {
     alert('SUCCESS!');
   }

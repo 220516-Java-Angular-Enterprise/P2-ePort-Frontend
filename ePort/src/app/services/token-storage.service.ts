@@ -15,7 +15,7 @@ export class TokenStorageService implements HttpInterceptor {
     console.log(req)
     let tokenizedReq = req.clone({
       setHeaders: {
-        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Origin": "origin-list",
         Authorization: `${this.authService.getAuthToken()}`
       }
     })
