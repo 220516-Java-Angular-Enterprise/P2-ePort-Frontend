@@ -32,10 +32,6 @@ export class AdminViewUserDetailsComponent implements OnInit {
     isActive: true
   }
 
-  deleteRequest: User = {
-    username: ""
-  }
-
   ngOnInit(): void {
     this.currRouter.params.subscribe(p => {
       this.username = p['username'];
@@ -43,7 +39,6 @@ export class AdminViewUserDetailsComponent implements OnInit {
         this.user = u;
       })
     })
-    this.deleteRequest.id = this.user.id;
   }
 
   changeUserAccountStatus(){
@@ -53,7 +48,7 @@ export class AdminViewUserDetailsComponent implements OnInit {
   }
 
   deleteUserAccount(){
-    this.adminService.deleteUser(this.deleteRequest);
+    this.adminService.deleteUser(this.username);
   }
 
 }
