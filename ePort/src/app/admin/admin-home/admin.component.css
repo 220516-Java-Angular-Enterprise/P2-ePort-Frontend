@@ -18,6 +18,10 @@
     text-align: center;
 }
 
+.button-container button:not(:last-child) {
+    border-bottom: none;
+}
+
 .img-container {
     text-align: center;
 }
@@ -25,13 +29,19 @@
 h1 {
     text-align: center;
     font-size: 48px;
+    font-family: 'Blippo';
     color: white;
 }
 
 button {
-    display: inline-block;
-    margin-left: 5%;
-    margin-right: 5%;
-    transform: scale(1.2);
+    width: 50%;
+    display: block;
+    font-family: 'Blippo';
+    margin: auto;
+    border: black;
+}
+
+button:hover {
+    background-color: rgb(130, 130, 130);
 }
 

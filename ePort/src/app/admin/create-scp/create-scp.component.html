@@ -1,0 +1,33 @@
+<button routerLink="/admin">Back to Main Menu</button>
+<div class="create-scp-menu">
+  <div class="container">
+    <h1>Identify new SCP</h1>
+  </div>
+  
+  <div class="img-container">
+    <img src="https://cdn.discordapp.com/attachments/975764660311711806/988898713575493662/mcd.png">
+  </div>
+
+  <div class="container">
+    <form (ngSubmit)="processForm(newSCP)" #newSCP="ngForm">
+      <div class="form-block">
+        <label for="SCP-name">SCP Name: </label>
+        <input class="form-control" [(ngModel)]="scp.name" type="text" id="SCP-name" name="SCP-name" #name="ngModel" required>
+      </div>
+  
+      <div class="form-group">
+        <div *ngIf="displayFormSubmitError" style="color: red">
+            <br>
+            There's something wrong with your form
+        </div>
+  
+        <br>
+  
+        <input type="submit" value="Create" class="btn btn-success">
+    </div>
+  
+    </form>
+  </div>
+</div>
+
+

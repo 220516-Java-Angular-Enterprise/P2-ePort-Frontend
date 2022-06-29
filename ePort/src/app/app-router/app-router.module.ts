@@ -9,6 +9,7 @@ import { SignupComponent } from '../signup/signup.component';
 import { AdminViewUserDetailsComponent } from '../admin/admin-view-user-details/admin-view-user-details.component';
 import { AddAuctionComponent } from '../admin/add-auction/add-auction.component';
 import { AuthGuard } from '../auth.guard';
+import { CreateScpComponent } from '../admin/create-scp/create-scp.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,11 @@ const routes: Routes = [
   {
     path: 'admin/view-users/:username',
     component: AdminViewUserDetailsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'admin/create-scp',
+    component: CreateScpComponent,
     canActivate: [AuthGuard]
   }
 ];
