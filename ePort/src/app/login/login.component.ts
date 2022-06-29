@@ -48,11 +48,13 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.auth).subscribe(
         (res) => {
         if(res != null) {
-          // storing resp in console and token, userdata in local storage
+          // storing resp in console and userdata in local storage
           console.log(res),
           localStorage.setItem('token', res.token),
-          localStorage.setItem('userData', JSON.stringify(res)) 
-          
+          localStorage.setItem('id', res.id),
+          localStorage.setItem('username', res.username),
+          localStorage.setItem('role', res.role)
+
           // redirect to login if user inactive
           if(!!localStorage.getItem('token') == false) {
             this.router.navigateByUrl('login')

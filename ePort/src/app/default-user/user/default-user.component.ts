@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './default-user.component.html',
   styleUrls: ['./default-user.component.css']
 })
+
 export class DefaultUserComponent implements OnInit {
   users = []
   constructor(protected userService: UserService,private router:Router ) { }
@@ -16,6 +17,7 @@ export class DefaultUserComponent implements OnInit {
   ngOnInit(): void {
     //need to grab user info on initialize
   }
+  
   goToUserAccount(username: string | undefined) {
     this.router.navigateByUrl('/username' + username)
   }

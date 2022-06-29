@@ -12,17 +12,13 @@ export class TokenStorageService implements HttpInterceptor {
   constructor(private authService: AuthService) {
    }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(req)
+    console.log("INTERCEPTOR")
     let tokenizedReq = req.clone({
       setHeaders: {
         "Access-Control-Allow-Origin": "origin-list",
         Authorization: `${this.authService.getAuthToken()}`
       }
     })
-    if(this.authService.getAuthToken() == null) {
-      console.log('INTERCEPTOR')
-      return next.handle(tokenizedReq)
-    }
       return next.handle(tokenizedReq)
   }
 }
