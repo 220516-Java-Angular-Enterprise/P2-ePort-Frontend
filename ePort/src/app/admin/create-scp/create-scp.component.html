@@ -11,8 +11,7 @@
   <div class="container">
     <form (ngSubmit)="processForm(newSCP)" #newSCP="ngForm">
       <div class="form-block">
-        <label for="SCP-name">SCP Name: </label>
-        <input class="form-control" [(ngModel)]="scp.name" type="text" id="SCP-name" name="SCP-name" #name="ngModel" required>
+        <input class="form-control" placeholder="SCP Name" [(ngModel)]="scp.name" type="text" id="SCP-name" name="SCP-name" #name="ngModel" required>
       </div>
   
       <div class="form-group">

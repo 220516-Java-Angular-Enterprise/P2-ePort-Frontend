@@ -5,6 +5,6 @@ export interface NewAuction {
     status: boolean;
     startingDate: string;
     expiration: string;
-    scp_id: string;
+    scpName: string;
     user_id: string;
 }

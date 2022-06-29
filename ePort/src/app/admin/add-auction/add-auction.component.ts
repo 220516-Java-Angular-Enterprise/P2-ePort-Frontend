@@ -22,7 +22,7 @@ export class AddAuctionComponent implements OnInit {
     status: true,
     startingDate: "",
     expiration: "",
-    scp_id: "",
+    scpName: "",
     user_id: ""
   };
 

@@ -21,6 +21,15 @@
     text-align: center;
 }
 
+.form-block {
+    text-align: center;
+}
+
+input {
+    width: 50%;
+    margin: auto;
+}
+
 h1,label {
     color: white;
     font-family: 'Blippo';
@@ -32,8 +41,4 @@ button {
 
 button:hover {
     background-color: rgb(130, 130, 130);
-}
-
-label {
-    margin-left: -84%;
 }
