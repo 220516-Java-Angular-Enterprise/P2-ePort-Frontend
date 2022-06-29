@@ -43,7 +43,7 @@ export class AdminViewUserDetailsComponent implements OnInit {
 
   changeUserAccountStatus(){
     this.activateRequest.id = this.user.id;
-    console.log(this.activateRequest);
+    this.activateRequest.isActive = !this.user.isActive;
     this.adminService.activateUser(this.activateRequest);
   }
 
