@@ -50,9 +50,13 @@ export class LoginComponent implements OnInit {
         if(res != null) {
           // storing resp in console and token, userdata in local storage
           console.log(res),
-          localStorage.setItem('token', res.id),
+          localStorage.setItem('token', res.token),
           localStorage.setItem('userData', JSON.stringify(res)) 
-        
+          
+          // redirect to login if user inactive
+          if(!!localStorage.getItem('token') == false) {
+            this.router.navigateByUrl('login')
+          }
           if(res.role == "ADMIN") {
             this.router.navigateByUrl('admin')
           }
