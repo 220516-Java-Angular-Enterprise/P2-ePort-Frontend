@@ -1,6 +1,5 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { first, identity } from 'rxjs';
 import { firstValueFrom, FirstValueFromConfig } from 'rxjs/internal/firstValueFrom';
 import { AuctionShowing } from '../models/auction-showing';
 import { User } from '../models/user';
@@ -20,5 +19,4 @@ export class UserService {
   getUserByUsername(username: string): Promise<User> {
     return firstValueFrom(this.http.get<User>(this.URL + "users/" + username));
   }
-
 }

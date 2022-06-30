@@ -1,1 +1,27 @@
-<p>auctions works!</p>
+<div class="container">
+    <h1>On-Going Auctions</h1>
+    <div class="table-container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Auction Name</th>
+                    <th scope="col">Auction Began</th>
+                    <th scope="col">Auction Ends</th>
+                    <th scope="col">Starting Bid</th>
+                    <th scope="col">Buyout</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr *ngFor="let auction of auctions" (click)="goToAuction(auction.title)">
+                    <td>{{auction.title}}</td>
+                    <td>{{auction.startingDate}}</td>
+                    <td>{{auction.expirationDate}}</td>
+                    <td>{{auction.startingBid}}</td>
+                    <td>{{auction.buyoutBid}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="button" class="btn btn-light" routerLink="/default-user">Back to Main Menu</button>
+</div>

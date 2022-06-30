@@ -10,11 +10,14 @@ export class AuctionService {
 
   constructor(private http: HttpClient) { }
 
-  private URL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort";
+  private URL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/";
 
   getAllAuctions(): Promise<AuctionShowing[]> {
-    return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "/active"));
+    return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "auction/active"));
   }
 
+  getAuctionDetails(title: string): Promise<any> {
+    return firstValueFrom(this.http.get<any>(this.URL));
+  }
   
 }
