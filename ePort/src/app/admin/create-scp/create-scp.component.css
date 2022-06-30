@@ -25,6 +25,22 @@
     text-align: center;
 }
 
+.btn {
+    width: 50%;
+    display: block;
+    font-family: 'Blippo';
+    margin: auto;
+    margin-bottom: 1%;
+    border: black;
+    color: black;
+    background-color: rgb(100, 100, 100);
+}
+
+.btn:hover {
+    color: white;
+    background-color: rgb(130, 130, 130);
+}
+
 input {
     width: 50%;
     margin: auto;
@@ -36,9 +52,16 @@ h1,label {
 }
 
 button {
+    width: 50%;
+    display: block;
     font-family: 'Blippo';
+    margin: auto;
+    margin-bottom: 1%;
+    border: black;
+    background-color: rgb(100, 100, 100);
 }
 
 button:hover {
+    color: white;
     background-color: rgb(130, 130, 130);
 }

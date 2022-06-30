@@ -1,52 +1,41 @@
 <div class="container">
-    <h1>Open New Auction</h1>
-    <a routerLink="/admin/view-auctions">Back to Auction List</a>
-  </div>
-  
-  <div class="container">
-    <form (ngSubmit)="processForm(newAuctionForm)" #newAuctionForm="ngForm">
-      <div class="form-block">
-        <label for="newAuction-title">Title: </label>
-        <input class="form-control" [(ngModel)]="newAuction.title" type="text" id="newAuction-title" name="newAuction-title" #name="ngModel" required>
-      </div>
-  
-      <div class="form-block">
-        <label for="newAuction-buyOut">Buy Out: </label>
-        <input class="form-control" [(ngModel)]="newAuction.buyOut" type="text" id="newAuction-buyOut" name="newAuction-buyOut" #name="ngModel" required>
-      </div>
-  
-      <div class="form-block">
-        <label for="newAuction-startingBid">Starting Bid: </label>
-        <input class="form-control" [(ngModel)]="newAuction.startingBid" type="text" id="newAuction-startingBid" name="newAuction-startingBid" #name="ngModel" required>
-      </div>
-  
-      <!-- "2022-12-10T13:45:00.0Z" -->
-      <div class="form-block">
-        <label for="newAuction-startingDate">Starting Date: </label>
-        <input class="form-control" [(ngModel)]="newAuction.startingDate" type="text" id="newAuction-startingDate" name="newAuction-startingDate" #name="ngModel" required>
-      </div>
-  
-      <!-- "2022-12-10T13:45:00.0Z" -->
-      <div class="form-block">
-        <label for="newAuction-expiration">Expiration Date: </label>
-        <input class="form-control" [(ngModel)]="newAuction.expiration" type="text" id="newAuction-expiration" name="newAuction-expiration" #name="ngModel" required>
-      </div>
-
-      <div class="form-block">
-        <label for="newAuction-scpName">SCP Name: </label>
-        <input class="form-control" [(ngModel)]="newAuction.scpName" type="text" id="newAuction-scpName" name="newAuction-scpName" #name="ngModel" required>
-      </div>
-  
-      <div class="form-group">
-        <div *ngIf="displayFormSubmitError" style="color: red">
-            <br>
-            There's something wrong with your form
-        </div>
-  
-        <br>
-  
-        <input type="submit" value="Create" class="btn btn-success">
+  <h1>Open New Auction</h1>
+  <form (ngSubmit)="processForm(newAuctionForm)" #newAuctionForm="ngForm">
+    
+    <div class="form-block">
+      <input class="form-control" placeholder="Auction Name" [(ngModel)]="newAuction.title" type="text" id="newAuction-title" name="newAuction-title" #name="ngModel" required>
     </div>
   
-    </form>
-  </div>
+    <div class="form-block">
+      <input class="form-control" placeholder="Buyout Price" [(ngModel)]="newAuction.buyOut" type="text" id="newAuction-buyOut" name="newAuction-buyOut" #name="ngModel" required>
+    </div>
+  
+    <div class="form-block">
+      <input class="form-control" placeholder="Starting Bid" [(ngModel)]="newAuction.startingBid" type="text" id="newAuction-startingBid" name="newAuction-startingBid" #name="ngModel" required>
+    </div>
+  
+    <!-- "2022-12-10T13:45:00.0Z" -->
+    <div class="form-block">
+      <input class="form-control" placeholder="Starting Date" [(ngModel)]="newAuction.startingDate" type="text" id="newAuction-startingDate" name="newAuction-startingDate" #name="ngModel" required>
+    </div>
+  
+    <!-- "2022-12-10T13:45:00.0Z" -->
+    <div class="form-block">
+      <input class="form-control" placeholder="Expiration Date" [(ngModel)]="newAuction.expiration" type="text" id="newAuction-expiration" name="newAuction-expiration" #name="ngModel" required>
+    </div>
+
+    <div class="form-block">
+      <input class="form-control" placeholder="SCP ID" [(ngModel)]="newAuction.scpName" type="text" id="newAuction-scpName" name="newAuction-scpName" #name="ngModel" required>
+    </div>
+
+    <div class="form-group">
+      <div *ngIf="displayFormSubmitError" style="color: red">
+        <br>
+        There's something wrong with your form
+      </div>
+
+      <input type="submit" value="Open Auction" class="btn btn-success">
+      <button type="button" class="btn btn-light" routerLink="/admin/view-auctions">Back to Auction List</button>
+    </div>
+  </form>
+</div>

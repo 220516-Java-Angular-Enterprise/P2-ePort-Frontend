@@ -17,8 +17,8 @@ export class AddAuctionComponent implements OnInit {
 
   newAuction: NewAuction = {
     title: "",
-    buyOut: 0,
-    startingBid: 0,
+    buyOut: undefined,
+    startingBid: undefined,
     status: true,
     startingDate: "",
     expiration: "",
@@ -34,7 +34,7 @@ export class AddAuctionComponent implements OnInit {
     console.log(this.newAuction);
     if(newAuctionForm.form.status == 'VALID'){
       this.adminService.createNewAuction(this.newAuction);
-      this.router.navigateByUrl('/admin/view-auctions')
+      this.router.navigateByUrl('/admin')
     }
     else{
       this.displayFormSubmitError = true;

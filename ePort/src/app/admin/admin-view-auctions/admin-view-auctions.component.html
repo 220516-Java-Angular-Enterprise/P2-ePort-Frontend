@@ -5,6 +5,9 @@
             <thead>
                 <tr>
                     <th scope="col">Auction Name</th>
+                    <th scope="col">Auction Began</th>
+                    <th scope="col">Auction Ends</th>
+                    <th scope="col">Starting Bid</th>
                     <th scope="col">Buyout</th>
                 </tr>
             </thead>
@@ -12,11 +15,14 @@
             <tbody>
                 <tr *ngFor="let auction of auctions">
                     <td>{{auction.title}}</td>
+                    <td>{{auction.startingDate}}</td>
+                    <td>{{auction.expirationDate}}</td>
+                    <td>{{auction.startingBid}}</td>
                     <td>{{auction.buyoutBid}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <button routerLink="/admin">Back to Main Menu</button>
-    <button routerLink="/admin/view-auctions/newAuction">Open New Auction</button>
+    <button type="button" class="btn btn-light" routerLink="/admin">Back to Main Menu</button>
+    <button type="button" class="btn btn-light" routerLink="/admin/view-auctions/newAuction">Open New Auction</button>
 </div>
