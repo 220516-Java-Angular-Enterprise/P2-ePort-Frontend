@@ -23,10 +23,5 @@ export class UserService {
   getUserByUsername(username: string): Promise<User> {
     return firstValueFrom(this.http.get<User>(this.URL + "users/" + username));
   }
-<<<<<<< HEAD
 
-  //go get user bid history
-
-=======
->>>>>>> 64b2b98fecfba4e9faae5e05b4a2f068befe86ca
 }

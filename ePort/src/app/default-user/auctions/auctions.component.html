@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-
-<div class="container">
-    <h1>Active Auctions</h1>
-    <div class="table-container">
-        <table class="table table-bordered">
-=======
 <div class="container">
     <h1>On-Going Auctions</h1>
     <div class="table-container">
         <table class="table table-bordered table-hover">
->>>>>>> 64b2b98fecfba4e9faae5e05b4a2f068befe86ca
             <thead>
                 <tr>
                     <th scope="col">Auction Name</th>
@@ -21,17 +13,11 @@
             </thead>
     
             <tbody>
-<<<<<<< HEAD
-                <tr *ngFor="let auction of auctions">
+
+                <tr *ngFor="let auction of auctions" (click)="goToAuction(auction.title)">
                     <td>{{auction.title}}</td>
                     <td>{{auction.startingDate | date:'dd/MM/yyyy'}}</td>
                     <td>{{auction.expirationDate | date:'dd/MM/yyyy'}}</td>
-=======
-                <tr *ngFor="let auction of auctions" (click)="goToAuction(auction.title)">
-                    <td>{{auction.title}}</td>
-                    <td>{{auction.startingDate}}</td>
-                    <td>{{auction.expirationDate}}</td>
->>>>>>> 64b2b98fecfba4e9faae5e05b4a2f068befe86ca
                     <td>{{auction.startingBid}}</td>
                     <td>{{auction.buyoutBid}}</td>
                 </tr>

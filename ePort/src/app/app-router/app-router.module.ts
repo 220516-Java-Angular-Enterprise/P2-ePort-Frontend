@@ -11,15 +11,10 @@ import { AddAuctionComponent } from '../admin/add-auction/add-auction.component'
 import { AuthGuard } from '../auth.guard';
 import { CreateScpComponent } from '../admin/create-scp/create-scp.component';
 import { UserDetailsComponent } from '../default-user/user-details/user-details.component';
-<<<<<<< HEAD
 import { FundsComponent } from '../default-user/funds/funds.component';
 import { BiddingHistoryComponent } from '../default-user/bidding-history/bidding-history.component';
 import { AuctionsComponent } from '../default-user/auctions/auctions.component';
-=======
-import { AuctionsComponent } from '../default-user/auctions/auctions.component';
 import { AuctionDetailsComponent } from '../default-user/auction-details/auction-details.component';
->>>>>>> 64b2b98fecfba4e9faae5e05b4a2f068befe86ca
-
 const routes: Routes = [
   {
     path: 'login',
