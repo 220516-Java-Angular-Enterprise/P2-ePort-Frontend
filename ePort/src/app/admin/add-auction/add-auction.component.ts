@@ -27,9 +27,11 @@ export class AddAuctionComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.newAuction.user_id = localStorage.getItem("id")!;
   }
 
   processForm(newAuctionForm: NgForm){
+    console.log(this.newAuction);
     if(newAuctionForm.form.status == 'VALID'){
       this.adminService.createNewAuction(this.newAuction);
       this.router.navigateByUrl('/admin/view-auctions')

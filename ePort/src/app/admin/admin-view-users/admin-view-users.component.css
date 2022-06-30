@@ -22,9 +22,18 @@ h1,th,td {
     font-family: 'Blippo';
 }
 
+.button-container {
+    text-align: center;
+}
+
 button {
-    margin-bottom: 5%;
+    width: 50%;
+    display: block;
     font-family: 'Blippo';
+    margin: auto;
+    margin-bottom: 1%;
+    border: black;
+    background-color: rgb(100, 100, 100);
 }
 
 button:hover {
