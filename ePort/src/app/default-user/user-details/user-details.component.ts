@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,17 +12,14 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor(private userService: UserService, private currRouter: ActivatedRoute) { }
+  constructor(private userService: UserService, private authService: AuthService, private currRouter: ActivatedRoute) { }
 
   displayFormSubmitError:boolean = false;
 
   username: string = "";
 
   user: User = {
-    id: "",
     username: "",
-    password: "",
-    role: "",
     email: "",
     codename: "",
     shippingAddress: "",
@@ -31,9 +29,7 @@ export class UserDetailsComponent implements OnInit {
   };
 
   placeholders = {
-    id: "",
     username: "",
-    password: "",
     codename: "",
     paymentID: "",
     shippingAddress: "",
@@ -53,12 +49,13 @@ export class UserDetailsComponent implements OnInit {
         this.user = u; 
       })
     })
-    }
+  }
   
-
   processForm(updateUserInfoForm: NgForm){
     if(updateUserInfoForm.form.status == 'VALID'){
+      console.log(this.user)
       this.userService.updateUserInfo(this.user);
+      this.authService.logoutUser(); 
     }
     else{
       this.displayFormSubmitError = true;

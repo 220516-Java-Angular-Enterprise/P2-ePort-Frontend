@@ -1,35 +1,8 @@
-<div class="container">
-    <h1>username: {{user.username}}</h1>
-    <br>
-    <h3>
-        email: {{user.email}}
-    </h3>
-    <h3>
-        codename: {{user.codename}}   
-    </h3>
-    <h3>
-        Shipping Address: {{user.shippingAddress}}
-    </h3>
-    <h3>
-        funds: {{user.funds}}
-    </h3>
-    <h3>
-        Payment ID: {{user.paymentID}}
-    </h3>
-</div>
+
 
 <div class="container">
     <form (ngSubmit)="processForm(updateuserInfoForm)" #updateuserInfoForm="ngForm">
-      <div class="form-block">
-        <label for="update-username">Username: </label>
-        <input class="form-control" [(ngModel)]="user.username" type="text" id="update-username" name="update-username" [placeholder]="placeholders.username" #name="ngModel" required>
-      </div>
-  
-      <div class="form-block">
-        <label for="update-password">Password: </label>
-        <input class="form-control" [(ngModel)]="user.password" type="text" id="update-password" name="update-password" [placeholder]="placeholders.password" #name="ngModel" required>
-      </div>
-  
+      <h1>{{user.username}}</h1>
       <div class="form-block">
         <label for="update-codename">Alias: </label>
         <input class="form-control" [(ngModel)]="user.codename" type="text" id="update-codename" name="update-codename" [placeholder]="placeholders.codename" #name="ngModel" required>
@@ -58,7 +31,7 @@
   
         <br>
   
-        <input type="submit" value="Create" class="btn btn-success">
+        <input type="submit" value="Update" class="btn btn-dark">
     </div>
   
     </form>
