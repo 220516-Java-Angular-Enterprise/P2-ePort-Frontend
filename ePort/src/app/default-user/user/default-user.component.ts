@@ -23,9 +23,17 @@ export class DefaultUserComponent implements OnInit {
   goToUserDetails(username: string | undefined) {
     this.currRouter.navigateByUrl('default-user/' + username)
   }
+  
+  goToUserFunds(username: string | undefined) {
+    this.currRouter.navigateByUrl('default-user/' + username + "/funds")
+  }
 
-  goToUserBiddingHistory(username: string | undefined) {
-    // router for user history
+  goToUserBidHistory(username: string | undefined) {
+    this.currRouter.navigateByUrl('default-user/' + username + "/history")
+  }
+
+  goToLiveAuction(username: string | undefined) {
+    this.currRouter.navigateByUrl('default-user/' + username + "/view-auctions")
   }
 
 }

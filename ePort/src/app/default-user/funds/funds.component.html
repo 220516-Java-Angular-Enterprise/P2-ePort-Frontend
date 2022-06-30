@@ -1,0 +1,25 @@
+
+
+<div class="container">
+    <form (ngSubmit)="processForm(updateuserFundsForm)" #updateuserFundsForm="ngForm">
+      <h1>{{user.codename}}</h1>
+      <div class="form-block">
+        <label for="update-funds">Funds: </label>
+        <input class="form-control" [(ngModel)]="user.funds" type="text" id="update-funds" name="update-funds" [placeholder]="placeholders.funds" #name="ngModel" required>
+      </div>
+      <div class="form-group">
+        <div *ngIf="displayFormSubmitError" style="color: red">
+            <br>
+            There's something wrong with your form
+        </div>
+  
+        <br>
+  
+        <input type="submit" value="Update" class="btn btn-dark">
+    </div>
+  
+    </form>
+  </div>
+
+  <button type="button" routerLink="/default-user">Back to Main Menu</button>
+

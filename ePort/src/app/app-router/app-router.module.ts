@@ -11,6 +11,9 @@ import { AddAuctionComponent } from '../admin/add-auction/add-auction.component'
 import { AuthGuard } from '../auth.guard';
 import { CreateScpComponent } from '../admin/create-scp/create-scp.component';
 import { UserDetailsComponent } from '../default-user/user-details/user-details.component';
+import { FundsComponent } from '../default-user/funds/funds.component';
+import { BiddingHistoryComponent } from '../default-user/bidding-history/bidding-history.component';
+import { AuctionsComponent } from '../default-user/auctions/auctions.component';
 
 const routes: Routes = [
   {
@@ -29,6 +32,21 @@ const routes: Routes = [
   {
     path: 'default-user/:username',
     component: UserDetailsComponent,
+    canActivate: [AuthGuard]
+  }, 
+  {
+    path: 'default-user/:username/funds',
+    component: FundsComponent,
+    canActivate: [AuthGuard]
+  }, 
+  {
+    path: 'default-user/:username/history',
+    component: BiddingHistoryComponent,
+    canActivate: [AuthGuard]
+  }, 
+  {
+    path: 'default-user/:username/view-auctions',
+    component: AuctionsComponent,
     canActivate: [AuthGuard]
   }, 
   {

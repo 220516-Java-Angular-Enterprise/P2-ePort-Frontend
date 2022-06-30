@@ -14,11 +14,17 @@ export class UserService {
   private URL = "http://eportv1-env.eba-kghc26gi.us-west-2.elasticbeanstalk.com/ePort/";
 
   updateUserInfo(user: User){
-    return firstValueFrom(this.http.put(this.URL +"users", user));
+    return firstValueFrom(this.http.put(this.URL + "users", user));
+  }
+
+  updateUserFunds(funds: string){
+    return firstValueFrom(this.http.put(this.URL + "users", funds));
   }
 
   getUserByUsername(username: string): Promise<User> {
     return firstValueFrom(this.http.get<User>(this.URL + "users/" + username));
   }
+
+  //go get user bid history
 
 }
