@@ -15,6 +15,8 @@ export class UserDetailsComponent implements OnInit {
 
   displayFormSubmitError:boolean = false;
 
+  username: string = "";
+
   user: User = {
     id: "",
     username: "",
@@ -39,9 +41,20 @@ export class UserDetailsComponent implements OnInit {
     funds: 0
   }
 
-  ngOnInit(): void {
-    //need to grab user info on initialize
+  activateRequest: User = {
+    username: "",
+    password: ""
   }
+
+  ngOnInit(): void {
+    this.currRouter.params.subscribe(p => {
+      this.username = p['username'];
+      this.userService.getUserByUsername(this.username).then(u =>{
+        this.user = u; 
+      })
+    })
+    }
+  
 
   processForm(updateUserInfoForm: NgForm){
     if(updateUserInfoForm.form.status == 'VALID'){

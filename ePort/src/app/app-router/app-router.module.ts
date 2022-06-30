@@ -10,6 +10,7 @@ import { AdminViewUserDetailsComponent } from '../admin/admin-view-user-details/
 import { AddAuctionComponent } from '../admin/add-auction/add-auction.component';
 import { AuthGuard } from '../auth.guard';
 import { CreateScpComponent } from '../admin/create-scp/create-scp.component';
+import { UserDetailsComponent } from '../default-user/user-details/user-details.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'default-user',
     component: DefaultUserComponent,
+    canActivate: [AuthGuard]
+  }, 
+  {
+    path: 'default-user/:username',
+    component: UserDetailsComponent,
     canActivate: [AuthGuard]
   }, 
   {

@@ -27,8 +27,8 @@ export class AuthService {
     return !!localStorage.getItem("token")
   }
   logoutUser() {
-    localStorage.removeItem('token')
-    localStorage.removeItem('userData')
-    this.route.navigate(['/login'])
+    // navigates user back to login and removes local storage
+    this.route.navigate(['login'])
+    window.localStorage.clear();
   }
 }
