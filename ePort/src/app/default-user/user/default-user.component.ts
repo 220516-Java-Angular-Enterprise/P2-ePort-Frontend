@@ -11,15 +11,17 @@ import { Router } from '@angular/router';
 })
 
 export class DefaultUserComponent implements OnInit {
-  users = []
-  constructor(protected userService: UserService,private router:Router ) { }
+  username:string = "";
+  constructor(protected userService: UserService,private currRouter:Router ) { }
 
   ngOnInit(): void {
-    //need to grab user info on initialize
+       //need to grab user info on initialize
+       this.username = localStorage.getItem('username')!
+       this.userService.getUserByUsername(this.username)
   }
   
-  goToUserAccount(username: string | undefined) {
-    this.router.navigateByUrl('/username' + username)
+  goToUserDetails(username: string | undefined) {
+    this.currRouter.navigateByUrl('default-user/' + username)
   }
 
   goToUserBiddingHistory(username: string | undefined) {

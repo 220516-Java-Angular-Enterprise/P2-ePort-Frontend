@@ -1,5 +1,5 @@
 
-  <div class="admin-menu">
+  <div class="default-user-menu">
     <h1>Customer Menu</h1>
     <div class="img-container">
         <img src="https://cdn.discordapp.com/attachments/975764660311711806/988898713575493662/mcd.png">
@@ -21,7 +21,7 @@
                 
 
                     <button type="button" class="btn btn-dark mr-1">View Bidding History</button>
-                    <button type="button" class="btn btn-dark mr-1" routerlink="/username">View Account Details</button>
+                    <button type="button" class="btn btn-dark mr-1" (click)="goToUserDetails(username)">View Account Details</button>
                 </div>
             </div>
           
