@@ -15,4 +15,12 @@ export class AuctionService {
   getAllAuctions(): Promise<AuctionShowing[]> {
     return firstValueFrom(this.http.get<AuctionShowing[]>(this.URL + "auction/active"));
   }
+<<<<<<< HEAD
+=======
+
+  getAuctionDetails(title: string): Promise<any> {
+    return firstValueFrom(this.http.get<any>(this.URL));
+  }
+  
+>>>>>>> 64b2b98fecfba4e9faae5e05b4a2f068befe86ca
 }

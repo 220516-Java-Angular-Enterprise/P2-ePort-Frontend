@@ -1,0 +1,50 @@
+.container {
+    height: 600px;
+    width: 600px;
+    background-color: rgba(255,255,255,0.10);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+
+.button-container {
+    padding: 5%;
+    text-align: center;
+}
+
+dl {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-family: 'Blippo';
+    margin-bottom: 5%;
+}
+
+dt, dd {
+    color: white;
+}
+
+button {
+    width: 50%;
+    display: block;
+    font-family: 'Blippo';
+    margin: auto;
+    margin-bottom: 1%;
+    border: black;
+    background-color: rgb(100, 100, 100);
+}
+
+button:hover {
+    color: white;
+    background-color: rgb(130, 130, 130);
+}
