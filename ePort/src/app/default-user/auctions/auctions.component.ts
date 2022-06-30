@@ -20,4 +20,8 @@ export class AuctionsComponent implements OnInit {
     });
   }
 
+  goToAuction(title: string | undefined) {
+    this.router.navigateByUrl('default-user/auctions/' + title)
+  }
+
 }
