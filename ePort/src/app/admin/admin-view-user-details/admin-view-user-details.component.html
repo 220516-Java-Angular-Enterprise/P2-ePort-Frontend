@@ -1,28 +1,31 @@
-<button routerLink="/admin">Back to Main Menu</button>
 <div class="container">
-    <h1>{{user.username}}</h1>
-    <br>
-    <h3>
-        <span>email:</span> {{user.email}}
-    </h3>
-    <h3>
-        <span>codename:</span> {{user.codename}}   
-    </h3>
-    <h3>
-        <span>Shipping Address:</span> {{user.shippingAddress}}
-    </h3>
-    <h3>
-        <span>funds</span>: {{user.funds}}
-    </h3>
-    <h3>
-        <span>Payment ID:</span> {{user.paymentID}}
-    </h3>
-    <h3>
-        <span>Account Active Status:</span> {{user.isActive}}
-    </h3>
+    <h1>User Details</h1>
+    <dl class="row">
+        <dt class="col-sm-4">Username:</dt>
+        <dd class="col-sm-8">{{user.username}}</dd>
+
+        <dt class="col-sm-4">Email:</dt>
+        <dd class="col-sm-8">{{user.email}}</dd>
+
+        <dt class="col-sm-4">Alias:</dt>
+        <dd class="col-sm-8">{{user.codename}}</dd>
+
+        <dt class="col-sm-4">Shipping Address:</dt>
+        <dd class="col-sm-8">{{user.shippingAddress}}</dd>
+
+        <dt class="col-sm-4">Funds</dt>
+        <dd class="col-sm-8">{{user.funds}}</dd>
+
+        <dt class="col-sm-4">Payment ID:</dt>
+        <dd class="col-sm-8">{{user.paymentID}}</dd>
+
+        <dt class="col-sm-4">Account Active:</dt>
+        <dd class="col-sm-8">{{user.isActive}}</dd>
+    </dl>
+
     <div class="button-container">
-        <button type="button" (click)="changeUserAccountStatus()">Change Account Status</button>
-        <button type="button" (click)="deleteUserAccount()">Delete Account</button>
+        <button type="button" class="btn btn-light" (click)="changeUserAccountStatus()">Activate/Deactivate Account</button>
+        <button type="button" class="btn btn-light" (click)="deleteUserAccount()">Delete Account</button>
+        <button type="button"  class="btn btn-light" routerLink="/admin/view-users">Back to View Users</button>
     </div>
-    
 </div>

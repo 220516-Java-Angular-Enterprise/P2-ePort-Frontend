@@ -1,7 +1,7 @@
 export interface NewAuction {
     title: string;
-    buyOut: number;
-    startingBid: number;
+    buyOut?: number;
+    startingBid?: number;
     status: boolean;
     startingDate: string;
     expiration: string;

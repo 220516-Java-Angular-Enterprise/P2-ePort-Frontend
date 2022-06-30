@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
   };
 
   auth: User = {
-    username: "",
-    password: ""
+    username: "Username",
+    password: "Password"
   }
 
   placeholders = {
@@ -51,7 +51,9 @@ export class LoginComponent implements OnInit {
           // storing resp in console and token, userdata in local storage
           console.log(res),
           localStorage.setItem('token', res.token),
-          localStorage.setItem('userData', JSON.stringify(res)) 
+          localStorage.setItem('id', res.id),
+          localStorage.setItem('role', res.role),
+          localStorage.setItem('username', res.username)
           
           // redirect to login if user inactive
           if(!!localStorage.getItem('token') == false) {

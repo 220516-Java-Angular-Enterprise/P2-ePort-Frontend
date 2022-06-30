@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../models/user';
 import { AdminService } from '../../services/admin.service';
 
@@ -10,7 +10,7 @@ import { AdminService } from '../../services/admin.service';
 })
 export class AdminViewUserDetailsComponent implements OnInit {
 
-  constructor(private adminService: AdminService, private currRouter: ActivatedRoute) { }
+  constructor(private adminService: AdminService, private router: Router, private currRouter: ActivatedRoute) { }
 
   username: string = "";
 
@@ -45,10 +45,12 @@ export class AdminViewUserDetailsComponent implements OnInit {
     this.activateRequest.id = this.user.id;
     this.activateRequest.isActive = !this.user.isActive;
     this.adminService.activateUser(this.activateRequest);
+    this.router.navigateByUrl('admin')
   }
 
   deleteUserAccount(){
     this.adminService.deleteUser(this.username);
+    this.router.navigateByUrl('admin')
   }
 
 }
