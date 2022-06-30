@@ -13,10 +13,11 @@
             </thead>
     
             <tbody>
+
                 <tr *ngFor="let auction of auctions" (click)="goToAuction(auction.title)">
                     <td>{{auction.title}}</td>
-                    <td>{{auction.startingDate}}</td>
-                    <td>{{auction.expirationDate}}</td>
+                    <td>{{auction.startingDate | date:'dd/MM/yyyy'}}</td>
+                    <td>{{auction.expirationDate | date:'dd/MM/yyyy'}}</td>
                     <td>{{auction.startingBid}}</td>
                     <td>{{auction.buyoutBid}}</td>
                 </tr>

@@ -5,9 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-          <a class="nav-link" href="#">About</a>
-      </ul>
+
       <nav class="navbar Navbar__Items--right">
         <a class="nav link" href="/login" style="cursor:pointer" *ngIf="authService.isLoggedIn()" (click)="authService.logoutUser()">Logout</a>
   

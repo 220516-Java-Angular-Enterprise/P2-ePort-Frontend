@@ -2,17 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user';
-import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-user-details',
-  templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.css']
+  selector: 'app-funds',
+  templateUrl: './funds.component.html',
+  styleUrls: ['./funds.component.css']
 })
-export class UserDetailsComponent implements OnInit {
+export class FundsComponent implements OnInit {
 
-  constructor(private userService: UserService, private authService: AuthService, private currRouter: ActivatedRoute) { }
+  constructor(private userService: UserService, private currRouter: ActivatedRoute) { }
 
   displayFormSubmitError:boolean = false;
 
@@ -36,7 +35,6 @@ export class UserDetailsComponent implements OnInit {
     email: "",
     funds: 0
   }
-
   ngOnInit(): void {
     this.currRouter.params.subscribe(p => {
       this.username = p['username'];
@@ -45,7 +43,7 @@ export class UserDetailsComponent implements OnInit {
       })
     })
   }
-  
+
   processForm(updateUserInfoForm: NgForm){
     if(updateUserInfoForm.form.status == 'VALID'){
       console.log(this.user)
