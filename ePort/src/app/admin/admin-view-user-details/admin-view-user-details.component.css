@@ -1,5 +1,5 @@
 .container {
-    height: 650px;
+    height: 600px;
     width: 600px;
     background-color: rgba(255,255,255,0.10);
     position: absolute;
@@ -18,24 +18,33 @@
     text-align: center;
 }
 
+dl {
+    text-align: center;
+}
+
 h1 {
     text-align: center;
     font-weight: bold;
-}
-
-h1, h3 {
     color: white;
     font-family: 'Blippo';
+    margin-bottom: 5%;
+}
+
+dt, dd {
+    color: white;
 }
 
 button {
+    width: 50%;
+    display: block;
     font-family: 'Blippo';
+    margin: auto;
+    margin-bottom: 1%;
+    border: black;
+    background-color: rgb(100, 100, 100);
 }
 
 button:hover {
+    color: white;
     background-color: rgb(130, 130, 130);
-}
-
-span {
-    font-weight: bold;
 }
