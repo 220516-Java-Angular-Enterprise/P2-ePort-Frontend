@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SCP } from 'src/app/models/SCP';
 import { AdminService } from 'src/app/services/admin.service';
 
@@ -10,7 +11,7 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class CreateScpComponent implements OnInit {
 
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService, private router: Router) { }
 
   displayFormSubmitError: boolean = false;
   
@@ -25,6 +26,7 @@ export class CreateScpComponent implements OnInit {
     if(newSCP.form.status == 'VALID'){
       console.log(this.scp);
       this.adminService.createSCP(this.scp);
+      this.router.navigateByUrl('admin');
     }
     else{
       this.displayFormSubmitError = true;

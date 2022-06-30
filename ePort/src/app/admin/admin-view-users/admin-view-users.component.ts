@@ -13,7 +13,7 @@ export class AdminViewUsersComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) { }
 
   users: User[] = [];
-
+  
   ngOnInit(): void {
     this.adminService.getAllUsers().then(u => {
       this.users = u;

@@ -1,14 +1,15 @@
-<button routerLink="/admin">Back to Main Menu</button>
 <div class="view-users-menu">
     <div class="container">
         <h1>System Users</h1>
     </div>
     <div class="container">
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
             <thead>
-                <th>Username</th>
-                <th>Alias</th>
-                <th>Account Status</th>
+                <tr>
+                    <th>Username</th>
+                    <th>Alias</th>
+                    <th>Account Active</th>
+                </tr>  
             </thead>
     
             <tbody>
@@ -19,6 +20,9 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="button-container">
+        <button class="btn btn-light" routerLink="/admin">Back to Main Menu</button>
     </div>
 </div>
 
