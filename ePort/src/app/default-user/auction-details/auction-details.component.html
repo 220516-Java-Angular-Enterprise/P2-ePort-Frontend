@@ -1,31 +1,39 @@
 <div class="container">
-    <h1>Auction Title</h1>
+    <h1>{{auction.title}}</h1>
+    <h2>{{auction.scpName}}</h2>
+    <div class="image-container">
+        <img src={{auction.scpImage}}>
+    </div>
+    <p>{{auction.scpDescription}}</p>
     <dl class="row">
-        <dt class="col-sm-4">Username:</dt>
-        <dd class="col-sm-8"></dd>
+        <dt class="col-sm-4">Buyout Bid:</dt>
+        <dd class="col-sm-8">{{auction.buyout_bid}}</dd>
 
-        <dt class="col-sm-4">Email:</dt>
-        <dd class="col-sm-8"></dd>
+        <dt class="col-sm-4">Current Bid:</dt>
+        <dd class="col-sm-8">{{auction.highestBid}}</dd>
 
-        <dt class="col-sm-4">Alias:</dt>
-        <dd class="col-sm-8"></dd>
+        <dt class="col-sm-4">Auction Opened:</dt>
+        <dd class="col-sm-8">{{auction.startDate | date:'dd/MM/yyyy'}}</dd>
 
-        <dt class="col-sm-4">Shipping Address:</dt>
-        <dd class="col-sm-8"></dd>
-
-        <dt class="col-sm-4">Funds</dt>
-        <dd class="col-sm-8"></dd>
-
-        <dt class="col-sm-4">Payment ID:</dt>
-        <dd class="col-sm-8"></dd>
-
-        <dt class="col-sm-4">Account Active:</dt>
-        <dd class="col-sm-8"></dd>
+        <dt class="col-sm-4">Auction Closes:</dt>
+        <dd class="col-sm-8">{{auction.expirationDate | date:'dd/MM/yyyy'}}</dd>
     </dl>
 
     <div class="button-container">
-        <button type="button" class="btn btn-light">Place/Update Bid</button>
-        <button type="button" class="btn btn-light">Delete Account</button>
+        <form (ngSubmit)="processForm(newBid)" #newBid="ngForm">
+            <div class="form-block">
+              <input class="form-control" placeholder="Bid Amount" [(ngModel)]="bid.amount" type="text" id="New-Bid" name="New-Bid" #name="ngModel" required>
+            </div>
+        
+            <div class="form-group">
+              <div *ngIf="displayFormSubmitError" style="color: red">
+                  <br>
+                  There's something wrong with your form
+              </div>
+              <input type="submit" value="Submit" class="btn btn-success">
+            </div>
+        
+          </form>
         <button type="button"  class="btn btn-light" routerLink="/default-user">Back to View Users</button>
     </div>
 </div>
