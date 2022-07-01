@@ -35,6 +35,7 @@ export class FundsComponent implements OnInit {
     email: "",
     funds: 0
   }
+  
   ngOnInit(): void {
     this.currRouter.params.subscribe(p => {
       this.username = p['username'];

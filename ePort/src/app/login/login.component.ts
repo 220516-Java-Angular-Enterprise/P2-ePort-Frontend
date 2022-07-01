@@ -31,13 +31,13 @@ export class LoginComponent implements OnInit {
   };
 
   auth: User = {
-    username: "Username",
-    password: "Password"
+    username: "",
+    password: ""
   }
 
   placeholders = {
-    username: "",
-    password: "",
+    username: "Enter Username",
+    password: "Enter Password",
   };
 
   ngOnInit(): void {

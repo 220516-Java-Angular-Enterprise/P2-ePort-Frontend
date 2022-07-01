@@ -1,6 +1,6 @@
 .container {
-    height: 80%;
     width: 80%;
+    height: auto;
     background-color: rgba(255,255,255,0.10);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -13,53 +13,107 @@
     padding: 50px 35px;
 }
 
+.image-container {
+    text-align: center;
+}
+
 .button-container {
     padding: 5%;
     text-align: center;
 }
 
-.image-container {
+.info {
     text-align: center;
 }
 
-dl {
-    text-align: center;
+.form-control {
+    width: 20%;
+    margin: auto;
+    margin-bottom: 2%;
+    font-size: 1.1vw;
+    font-family: 'Blippo';
 }
 
-h1, h2 {
+label {
+    color: white;
+    font-size: 1.1vw;
+    font-family: 'Blippo';
+}
+
+h1 {
     text-align: center;
     font-weight: bold;
     color: white;
+    font-size: 3vw;
     font-family: 'Blippo';
-    display: inline-block;
+    padding-top: 30%;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Blippo';
 }
 
 p {
-    text-align: center;
     color: white;
+    font-size: 1.1vw;
     font-family: 'Blippo';
 }
 
 img {
-    max-width: 150px;
+    max-width: 250px;
     height: auto;
+    margin: auto;
+    padding-bottom: 2%;
 }
 
-dt, dd {
+dl {
+    display: flex;
+    flex-flow: row wrap;
+    width: 70%;
+    border: solid rgb(130, 130, 130);
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+dt {
+    flex-basis: 30%;
+    padding: 0.2% 0.4%;
+    text-align: right;
+    font-family: 'Blippo';
+    font-size: 1.3vw;
     color: white;
 }
 
-button {
-    width: 50%;
-    display: block;
+dd {
+    flex-basis: 70%;
+    flex-shrink: 1;
+    padding: 0.2% 0.4%;
     font-family: 'Blippo';
-    margin: auto;
+    font-size: 1.1vw;
+    color: white;
+    border-bottom: 1px solid white;
+    width: 15%;
+}
+
+.bid-button,button {
+    width: 17%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    font-family: 'Blippo';
+    font-size: 1.1vw;
     margin-bottom: 1%;
     border: black;
     background-color: rgb(100, 100, 100);
+    border-radius: 3px;
 }
 
-button:hover {
+.bid-button:hover,button:hover {
     color: white;
     background-color: rgb(130, 130, 130);
 }

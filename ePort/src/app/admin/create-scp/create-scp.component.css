@@ -1,6 +1,6 @@
 .create-scp-menu {
-    height: 520px;
-    width: 550px;
+    height: 80%;
+    width: 80%;
     background-color: rgba(255,255,255,0.10);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -21,13 +21,21 @@
     text-align: center;
 }
 
+img {
+    width: 20%;
+    height: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 .form-block {
     text-align: center;
 }
 
 .btn {
-    width: 50%;
+    width: 20%;
     display: block;
+    font-size: 1.2vw;
     font-family: 'Blippo';
     margin: auto;
     margin-bottom: 1%;
@@ -42,26 +50,14 @@
 }
 
 input {
-    width: 50%;
-    margin: auto;
-}
-
-h1,label {
-    color: white;
-    font-family: 'Blippo';
-}
-
-button {
-    width: 50%;
-    display: block;
+    width: 20%;
+    font-size: 1.1vw;
     font-family: 'Blippo';
     margin: auto;
-    margin-bottom: 1%;
-    border: black;
-    background-color: rgb(100, 100, 100);
 }
 
-button:hover {
+h1 {
     color: white;
-    background-color: rgb(130, 130, 130);
+    font-size: 3vw;
+    font-family: 'Blippo';
 }
