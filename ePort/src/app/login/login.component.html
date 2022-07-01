@@ -1,24 +1,24 @@
-<div class="container">
+
   <form (ngSubmit)="processForm(loginForm)" #loginForm="ngForm">
     <div class="login">
-      <h1>Log-In</h1>
+      <h1>Welcome to ePort</h1>
       <img src="https://cdn.discordapp.com/attachments/975764660311711806/988898713575493662/mcd.png" alt="Marshall, Carter & Dark Logo">
     </div>
+    <div class="credentials">
       <input class="form-control" [(ngModel)]="auth.username" type="text" id="login-username" name="login-username" [placeholder]="placeholders.username" #name="ngModel" required>
       <input class="form-control" [(ngModel)]="auth.password" type="password" id="login-password" name="login-password" [placeholder]="placeholders.password" #name="ngModel" required>
-
+    </div>
       <div class="form-group">
         <div *ngIf="displayFormSubmitError" style="color: red">
-          <br>
-          There's something wrong with your form
+          Invalid Log-In.
         </div>
-        
-        <!-- <button (click)="loginUser()" type="button" class="btn btn-primary">Login</button> -->
-        <input type="submit" value="Login"> 
-        <button type="button" routerLink="/signup">Don't have an account? Sign-Up</button>
+        <div class="button-container">
+          <input type="submit" value="Login"> 
+          <button type="button" routerLink="/signup">Sign-Up</button>
+        </div>
       </div>   
   </form>
-</div>
+
 
 
 

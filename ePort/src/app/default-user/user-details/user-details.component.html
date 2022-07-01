@@ -23,16 +23,13 @@
   
       <div class="form-group">
         <div *ngIf="displayFormSubmitError" style="color: red">
-            <br>
-            There's something wrong with your form
+            Invalid Update.
         </div>
-  
-        <br>
-        <input type="submit" value="Update" class="btn btn-dark">
         <div class="button-container">
-          <button type="button"  class="btn btn-light" routerLink="/default-user">Back to Main Menu</button>
+          <input type="submit" value="Update" class="update-button">
+          <button type="button" routerLink="/default-user">Back to Main Menu</button>
         </div>
-    </div>
+      </div>
   
     </form>
   </div>

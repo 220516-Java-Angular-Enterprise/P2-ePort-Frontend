@@ -30,12 +30,12 @@
 
     <div class="form-group">
       <div *ngIf="displayFormSubmitError" style="color: red">
-        <br>
-        There's something wrong with your form
+        Invalid Auction Form
       </div>
-
-      <input type="submit" value="Open Auction" class="btn btn-success">
-      <button type="button" class="btn btn-light" routerLink="/admin/view-auctions">Back to Auction List</button>
+    </div>
+    <div class="button-container">
+      <input type="submit" value="Open Auction" class="bottom-button">
+      <button type="button" class="bottom-button" routerLink="/admin/view-auctions">Back to Auction List</button>
     </div>
   </form>
 </div>

@@ -1,11 +1,15 @@
 <div class="container">
-    <h1>{{auction.title}}</h1>
-    <h2>{{auction.scpName}}</h2>
-    <div class="image-container">
+    <h1>{{auction.title}}:</h1>
+    <h2> {{auction.scpName}}</h2>
+    <div class="description">
+      <div class="image-container">
         <img src={{auction.scpImage}}>
+      </div>
+      <p>{{auction.scpDescription}}</p>
     </div>
-    <p>{{auction.scpDescription}}</p>
-    <dl class="row">
+
+    <div class="info">
+      <dl class="row">
         <dt class="col-sm-4">Buyout Bid:</dt>
         <dd class="col-sm-8">{{auction.buyout_bid}}</dd>
 
@@ -17,23 +21,24 @@
 
         <dt class="col-sm-4">Auction Closes:</dt>
         <dd class="col-sm-8">{{auction.expirationDate | date:'dd/MM/yyyy'}}</dd>
-    </dl>
+      </dl>
+    </div>
 
     <div class="button-container">
         <form (ngSubmit)="processForm(newBid)" #newBid="ngForm">
             <div class="form-block">
+              <label>Bid Amount:</label>
               <input class="form-control" placeholder="Bid Amount" [(ngModel)]="bid.amount" type="text" id="New-Bid" name="New-Bid" #name="ngModel" required>
             </div>
         
             <div class="form-group">
               <div *ngIf="displayFormSubmitError" style="color: red">
-                  <br>
-                  There's something wrong with your form
+                  Invalid bid.
               </div>
-              <input type="submit" value="Submit" class="btn btn-success">
+              <input type="submit" value="Place Bid" class="bid-button">
             </div>
         
           </form>
-        <button type="button"  class="btn btn-light" routerLink="/default-user">Back to View Users</button>
+        <button type="button" routerLink="/default-user/auctions">Back to Auctions</button>
     </div>
 </div>

@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
 
       <nav class="navbar Navbar__Items--right">
-        <a class="nav link" href="/login" style="cursor:pointer" *ngIf="authService.isLoggedIn()" (click)="authService.logoutUser()">Logout</a>
+        <ul class="nav link" href="/login" style="color: white; cursor:pointer;" onMouseOut="this.style.color='white'" onmouseover="this.style.color='gray'" *ngIf="authService.isLoggedIn()" (click)="authService.logoutUser()">Logout</ul>
   
       </nav>
       <ul>        
