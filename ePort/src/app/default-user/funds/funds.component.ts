@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class FundsComponent implements OnInit {
 
-  constructor(private userService: UserService, private currRouter: ActivatedRoute) { }
+  constructor(private userService: UserService, private router: Router, private currRouter: ActivatedRoute) { }
 
   displayFormSubmitError:boolean = false;
 
@@ -49,6 +49,7 @@ export class FundsComponent implements OnInit {
     if(updateUserInfoForm.form.status == 'VALID'){
       console.log(this.user)
       this.userService.updateUserInfo(this.user);
+      this.router.navigateByUrl('/default-user');
     }
     else{
       this.displayFormSubmitError = true;

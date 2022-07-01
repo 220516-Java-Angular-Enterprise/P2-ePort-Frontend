@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Bid } from 'src/app/models/bid';
 import { SCP } from 'src/app/models/SCP';
 import { ViewedAuction } from 'src/app/models/viewed-auction';
@@ -13,7 +13,7 @@ import { AuctionService } from 'src/app/services/auction.service';
 })
 export class AuctionDetailsComponent implements OnInit {
 
-  constructor(private auctionService: AuctionService, private currRouter: ActivatedRoute) { }
+  constructor(private auctionService: AuctionService, private router: Router, private currRouter: ActivatedRoute) { }
 
   title: string ="";
   displayFormSubmitError: boolean = false;
@@ -54,6 +54,7 @@ export class AuctionDetailsComponent implements OnInit {
       this.bid.auction_id = this.auction.id;
       this.bid.user_id = localStorage.getItem("id")!;
       this.auctionService.newBid(this.bid);
+      this.router.navigateByUrl('/default-user');
     }
     else{
       this.displayFormSubmitError = true;

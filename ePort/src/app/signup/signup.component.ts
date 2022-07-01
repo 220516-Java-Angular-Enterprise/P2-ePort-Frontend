@@ -31,12 +31,12 @@ export class SignupComponent implements OnInit {
   };
 
   placeholders = {
-    username: "",
-    password: "",
-    codename: "",
-    paymentID: "",
-    shippingAddress: "",
-    email: ""
+    username: "Username",
+    password: "Password",
+    codename: "Alias",
+    paymentID: "Payment ID",
+    shippingAddress: "Shipping Address",
+    email: "e-mail"
   };
 
   ngOnInit(): void {
