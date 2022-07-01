@@ -1,49 +1,39 @@
-<div>
-  <button type="button" routerLink="/login">Back to Log-In</button>
-</div>
 
 <div class="container">
   <h1>Registration</h1>
   <form (ngSubmit)="processForm(signupForm)" #signupForm="ngForm">
     <div class="form-block">
-      <label for="signup-username">Username: </label>
       <input class="form-control" [(ngModel)]="user.username" type="text" id="signup-username" name="signup-username" [placeholder]="placeholders.username" #name="ngModel" required>
     </div>
 
     <div class="form-block">
-      <label for="signup-password">Password: </label>
       <input class="form-control" [(ngModel)]="user.password" type="text" id="signup-password" name="signup-password" [placeholder]="placeholders.password" #name="ngModel" required>
     </div>
 
     <div class="form-block">
-      <label for="signup-codename">Alias: </label>
       <input class="form-control" [(ngModel)]="user.codename" type="text" id="signup-codename" name="signup-codename" [placeholder]="placeholders.codename" #name="ngModel" required>
     </div>
 
     <div class="form-block">
-      <label for="signup-paymentID">Payment ID: </label>
       <input class="form-control" [(ngModel)]="user.paymentID" type="text" id="signup-paymentID" name="signup-paymentID" [placeholder]="placeholders.paymentID" #name="ngModel" required>
     </div>
 
     <div class="form-block">
-      <label for="signup-shippingAddress">Shipping Address: </label>
       <input class="form-control" [(ngModel)]="user.shippingAddress" type="text" id="signup-shippingAddress" name="signup-shippingAddress" [placeholder]="placeholders.shippingAddress" #name="ngModel" required>
     </div>
 
     <div class="form-block">
-      <label for="signup-email">Email: </label>
       <input class="form-control" [(ngModel)]="user.email" type="text" id="signup-email" name="signup-email" [placeholder]="placeholders.email" #name="ngModel" required>
     </div>
 
     <div class="form-group">
       <div *ngIf="displayFormSubmitError" style="color: red">
-          <br>
-          There's something wrong with your form
+          Invalid Sign-Up Credentials
       </div>
-
-      <br>
-
-      <input type="submit" value="Create" class="btn btn-success">
+      <div class="button-container">
+        <input type="submit" value="Register" class="register-button">
+        <button type="button" class="nav-button" routerLink="/login">Back to Log-In</button>
+      </div>
   </div>
 
   </form>

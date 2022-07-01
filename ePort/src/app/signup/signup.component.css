@@ -1,6 +1,6 @@
-form{
-    height: 520px;
-    width: 400px;
+.container{
+    height: 80%;
+    width: 80%;
     background-color: rgba(255,255,255,0.10);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -13,12 +13,45 @@ form{
     padding: 30px 35px;
 }
 
-label {
-    color: white;
+.form-block {
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.form-control {
+    width: 30%;
+    padding: 1% 1%;
+    margin: auto;
+    border-radius: 3%;
+    font-size: 1.1vw;
+    font-family: 'Blippo';
 }
 
 h1 {
     color: white;
-    font-family: "Blippo";
+    font-family: 'Blippo';
     text-align: center;
+    margin-bottom: 1%;
+}
+
+.nav-button,.register-button{
+    width: 17%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    margin-top: 2%;
+    font-family: 'Blippo';
+    font-size: 1.2vw;
+    border: black;
+    color: white;
+    background-color: rgb(100, 100, 100);
+    border-radius: 3px;
+}
+
+.nav-button:hover,.register-button:hover{
+    color: black;
+    background-color: rgb(130, 130, 130);
 }
